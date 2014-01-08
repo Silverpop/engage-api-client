@@ -47,16 +47,9 @@ public class SaveMailingCommand implements ApiCommand {
 	}
 	
 	public void setClickThroughs(Collection<SaveMailingClickThrough> clickThroughs) {
-		this.clickThroughs = new ArrayList<SaveMailingClickThrough>(clickThroughs.size());
+		this.clickThroughs = clickThroughs;
 	}
 
-//	public void addClickThrough(ClickThrough clickThrough) {
-//		if(clickThroughs == null) {
-//			clickThroughs = new ArrayList<SaveMailingClickThrough>();
-//		}
-//		clickThroughs.add(new SaveMailingClickThrough(clickThrough));
-//	}
-	
 	public void setForwardToFriend(Integer forwardType) {
 		this.forwardToFriend = new SaveMailingForwardToFriend(forwardType);
 	}
