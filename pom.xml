@@ -29,7 +29,7 @@
   <groupId>silverpop</groupId>
   <artifactId>spapi-client</artifactId>
   <packaging>jar</packaging>
-  <version>trunk-SNAPSHOT</version>
+  <version>trunk.SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
