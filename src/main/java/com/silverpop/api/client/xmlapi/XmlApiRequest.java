@@ -26,6 +26,7 @@ public class XmlApiRequest implements ApiRequest {
 	private XStreamFactory xStreamFactory;
 	private ApiAnnotationUtility<XmlApiProperties> annotationUtility;
     private String encoding;
+    Map<String,String> headers = new HashMap<String, String>();
 
 	public XmlApiRequest(ApiCommand apiCommand, ApiSession apiSession) {
 		this(apiCommand, apiSession, new XStreamFactory(), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
@@ -40,12 +41,16 @@ public class XmlApiRequest implements ApiRequest {
 	
 	@Override
 	public Map<String,String> getHeaders() {
-        Map<String,String> headers = new HashMap<String,String>();
-      		if(!EncodedApiCommand.NO_ENCODING.equals(encoding)) {
-      			headers.put("Content-Type", "application/x-www-form-urlencoded; charset=" + encoding);
-      		}
-      		return headers;
+        if (!EncodedApiCommand.NO_ENCODING.equals(encoding)) {
+            headers.put("Content-Type", "application/x-www-form-urlencoded; charset=" + encoding);
+        }
+        return headers;
 	}
+
+    @Override
+    public void addHeader(String key, String value) {
+        headers.put(key, value);
+    }
 
 	@Override
 	public Class<? extends ApiResult> getResultType() {

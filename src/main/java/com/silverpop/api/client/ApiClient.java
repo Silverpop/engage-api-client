@@ -6,6 +6,8 @@ import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.util.Map;
+
 public abstract class ApiClient<REQUEST extends ApiRequest> {
 
     private Log log = LogFactory.getLog(this.getClass());
@@ -31,34 +33,47 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 	}
 
 	public ApiResult executeCommand(ApiCommand command) throws ApiResultException {
-		try {
-			return validateSessionAndExecuteCommand(command);
-		} catch(ApiResultException e) {
-			if(retryCommand(e.getErrorResult())) {
-				getSession().close();
-				return validateSessionAndExecuteCommand(command);
-			} else {
-				throw e;
-			}
-		}		
+		return executeCommand(command, null);
 	}
+
+    public ApiResult executeCommand(ApiCommand command, Map<String,String> requestHeaders) throws ApiResultException {
+        try {
+            return validateSessionAndExecuteCommand(command, requestHeaders);
+        } catch(ApiResultException e) {
+            if(retryCommand(e.getErrorResult())) {
+                getSession().close();
+                return validateSessionAndExecuteCommand(command, requestHeaders);
+            } else {
+                throw e;
+            }
+        }
+    }
 
 	private boolean retryCommand(ApiErrorResult errorResult) {
 		return errorResult.isSessionInvalidOrExpired() && getSession().isReAuthenticate();
 	}
 
-	private ApiResult validateSessionAndExecuteCommand(ApiCommand command) throws ApiResultException {
+	private ApiResult validateSessionAndExecuteCommand(ApiCommand command, Map<String,String> requestHeaders) throws ApiResultException {
 		ensureSessionIsOpen();
 
 		REQUEST request = commandProcessor.prepareRequest(command, getSession());
-		HttpMethodBase method = commandProcessor.prepareMethod(getSession().getUrl(), request);
+        addAdditionalHeadersToRequest(request, requestHeaders);
 
+		HttpMethodBase method = commandProcessor.prepareMethod(getSession().getUrl(), request);
 		String in = executeMethod(method);
 
 		ApiResponse response = commandProcessor.processResponse(in, request.getResultType());
 		
 		return extractResult(command.getClass().getName(), response);
 	}
+
+    private void addAdditionalHeadersToRequest(REQUEST request, Map<String,String> requestHeaders) {
+        if (requestHeaders != null) {
+            for (String key : requestHeaders.keySet()) {
+                request.addHeader(key, requestHeaders.get(key));
+            }
+        }
+    }
 
 	private void ensureSessionIsOpen() {
 		if(!getSession().isOpen()) {
