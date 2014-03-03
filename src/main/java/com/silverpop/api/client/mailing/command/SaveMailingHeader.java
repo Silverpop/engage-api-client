@@ -175,7 +175,7 @@ public class SaveMailingHeader {
 	}
 
 	public void setIncludeClick() {
-		this.includeClick = new Boolean(true);
+		this.includeClick = Boolean.TRUE;
 	}
 
 	public void setAolBackgroundColor(String aolBackgroundColor) {
@@ -211,14 +211,14 @@ public class SaveMailingHeader {
 	}
 
 	public void setHasContentScrape() {
-		this.hasContentScrape = new Boolean(true);
+		this.hasContentScrape = Boolean.TRUE;
 	}
 
 	public void setIsCrmTemplate() {
-		this.isCrmTemplate = new Boolean(true);
+		this.isCrmTemplate = Boolean.TRUE;
 	}
 
 	public void setHasSpCrmBlock() {
-		this.hasSpCrmBlock = new Boolean(true);
+		this.hasSpCrmBlock = Boolean.TRUE;
 	}
 }

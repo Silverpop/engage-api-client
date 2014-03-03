@@ -132,7 +132,7 @@ public class ScheduleMailingCommand implements ApiCommand {
 
 
 	public void setSendHTML() {
-		this.sendHTML = new Boolean(true);
+		this.sendHTML = Boolean.TRUE;
 	}
 
 
@@ -142,7 +142,7 @@ public class ScheduleMailingCommand implements ApiCommand {
 
 
 	public void setSendAOL() {
-		this.sendAOL = new Boolean(true);
+		this.sendAOL = Boolean.TRUE;
 	}
 
 
@@ -152,7 +152,7 @@ public class ScheduleMailingCommand implements ApiCommand {
 
 
 	public void setSendText() {
-		this.sendText = new Boolean(true);
+		this.sendText = Boolean.TRUE;
 	}
 
 

@@ -1,12 +1,12 @@
 package com.silverpop.api.client;
 
+import java.util.Map;
+
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-import java.util.Map;
 
 public abstract class ApiClient<REQUEST extends ApiRequest> {
 
@@ -90,13 +90,13 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 			if (!responseBody.isEmpty()) {
 				return responseBody;
 			} else {
-				StringBuffer buffer = new StringBuffer();
+				StringBuilder buffer = new StringBuilder();
 				buffer.append("No response body was returned!\nResponse Headers-\n");
 				Header[] headers = method.getResponseHeaders();
 				for (Header header : headers) {
-					buffer.append(header.getName() + ": " + header.getValue()+"\n");
+					buffer.append(header.getName()).append(": ").append(header.getValue()).append("\n");
 				}
-				buffer.append("Content length reported as: " + method.getResponseContentLength());
+				buffer.append("Content length reported as: ").append(method.getResponseContentLength());
 				throw new ApiException("Error executing API: " + buffer.toString());
 			}
 		} catch(Exception e) {
