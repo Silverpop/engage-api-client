@@ -1,5 +1,6 @@
 package com.silverpop.api.client;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.apache.commons.httpclient.Header;
@@ -83,7 +84,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 
 	protected String executeMethod(HttpMethodBase method) {
 		try {
-            log.error("executing method:" + method);
+            log.info("executing method:" + method);
 			httpClient.executeMethod(method);
 
 			String responseBody = method.getResponseBodyAsString();
@@ -99,7 +100,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 				buffer.append("Content length reported as: ").append(method.getResponseContentLength());
 				throw new ApiException("Error executing API: " + buffer.toString());
 			}
-		} catch(Exception e) {
+		} catch(IOException e) {
 			throw new ApiException("Error executing API: ", e);
 		}
 	}
