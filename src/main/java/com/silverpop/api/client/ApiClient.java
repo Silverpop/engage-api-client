@@ -87,7 +87,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 	protected String executeMethod(HttpMethodBase method) throws ApiResultException {
 		try {
             log.info("executing method:" + method);
-			httpClient.executeMethod(method);
+			int responseCode = httpClient.executeMethod(method);
 
 			String responseBody = method.getResponseBodyAsString();
 			if (responseBody != null && !responseBody.isEmpty()) {
@@ -99,7 +99,9 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 				for (Header header : headers) {
 					buffer.append(header.getName()).append(": ").append(header.getValue()).append("\n");
 				}
+                buffer.append("HTTP-Response-Code: ").append(responseCode).append("\n");
 				buffer.append("Content length reported as: ").append(method.getResponseContentLength());
+                log.info(buffer.toString());
                 throw new ApiResultException("Error executing API: " + buffer.toString(), new NoResponseApiErrorResult());
 			}
 		} catch(IOException e) {
