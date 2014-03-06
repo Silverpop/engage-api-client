@@ -9,6 +9,8 @@ import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.silverpop.api.client.xmlapi.NoResponseApiErrorResult;
+
 public abstract class ApiClient<REQUEST extends ApiRequest> {
 
     private Log log = LogFactory.getLog(this.getClass());
@@ -82,7 +84,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 		}
 	}
 
-	protected String executeMethod(HttpMethodBase method) {
+	protected String executeMethod(HttpMethodBase method) throws ApiResultException {
 		try {
             log.info("executing method:" + method);
 			httpClient.executeMethod(method);
@@ -98,7 +100,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 					buffer.append(header.getName()).append(": ").append(header.getValue()).append("\n");
 				}
 				buffer.append("Content length reported as: ").append(method.getResponseContentLength());
-				throw new ApiException("Error executing API: " + buffer.toString());
+                throw new ApiResultException("Error executing API: " + buffer.toString(), new NoResponseApiErrorResult());
 			}
 		} catch(IOException e) {
 			throw new ApiException("Error executing API: ", e);
