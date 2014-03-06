@@ -88,7 +88,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 			httpClient.executeMethod(method);
 
 			String responseBody = method.getResponseBodyAsString();
-			if (!responseBody.isEmpty()) {
+			if (responseBody != null && !responseBody.isEmpty()) {
 				return responseBody;
 			} else {
 				StringBuilder buffer = new StringBuilder();
