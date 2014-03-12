@@ -53,7 +53,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
     }
 
 	private boolean retryCommand(ApiErrorResult errorResult) {
-		return errorResult.isSessionInvalidOrExpired() && getSession().isReAuthenticate();
+		return errorResult.isSessionLost() && getSession().isReAuthenticate();
 	}
 
 	private ApiResult validateSessionAndExecuteCommand(ApiCommand command, Map<String,String> requestHeaders) throws ApiResultException {

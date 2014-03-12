@@ -14,7 +14,7 @@ public class NoResponseApiErrorResult implements ApiErrorResult {
     }
 
     @Override
-    public boolean isSessionInvalidOrExpired() {
+    public boolean isSessionLost() {
         return true;
     }
 

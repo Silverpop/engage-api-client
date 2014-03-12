@@ -30,7 +30,7 @@ public class XmlApiErrorResult implements ApiErrorResult {
 	}
 
 	@Override
-	public boolean isSessionInvalidOrExpired() {
+	public boolean isSessionLost() {
 		return getDetail().getError().getErrorId() == 145 &&  "SP.Admin".equals(getDetail().getError().getErrorClass());
 	}
 
