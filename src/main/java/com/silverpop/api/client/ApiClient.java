@@ -1,5 +1,6 @@
 package com.silverpop.api.client;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.apache.commons.httpclient.Header;
@@ -7,6 +8,8 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import com.silverpop.api.client.xmlapi.NoResponseApiErrorResult;
 
 public abstract class ApiClient<REQUEST extends ApiRequest> {
 
@@ -50,7 +53,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
     }
 
 	private boolean retryCommand(ApiErrorResult errorResult) {
-		return errorResult.isSessionInvalidOrExpired() && getSession().isReAuthenticate();
+		return errorResult.isSessionLost() && getSession().isReAuthenticate();
 	}
 
 	private ApiResult validateSessionAndExecuteCommand(ApiCommand command, Map<String,String> requestHeaders) throws ApiResultException {
@@ -81,13 +84,13 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 		}
 	}
 
-	protected String executeMethod(HttpMethodBase method) {
+	protected String executeMethod(HttpMethodBase method) throws ApiResultException {
 		try {
-            log.error("executing method:" + method);
-			httpClient.executeMethod(method);
+            log.info("executing method:" + method);
+			int responseCode = httpClient.executeMethod(method);
 
 			String responseBody = method.getResponseBodyAsString();
-			if (!responseBody.isEmpty()) {
+			if (responseBody != null && !responseBody.isEmpty()) {
 				return responseBody;
 			} else {
 				StringBuilder buffer = new StringBuilder();
@@ -96,10 +99,12 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 				for (Header header : headers) {
 					buffer.append(header.getName()).append(": ").append(header.getValue()).append("\n");
 				}
+                buffer.append("HTTP-Response-Code: ").append(responseCode).append("\n");
 				buffer.append("Content length reported as: ").append(method.getResponseContentLength());
-				throw new ApiException("Error executing API: " + buffer.toString());
+                log.info(buffer.toString());
+                throw new ApiResultException("Error executing API: " + buffer.toString(), new NoResponseApiErrorResult());
 			}
-		} catch(Exception e) {
+		} catch(IOException e) {
 			throw new ApiException("Error executing API: ", e);
 		}
 	}
