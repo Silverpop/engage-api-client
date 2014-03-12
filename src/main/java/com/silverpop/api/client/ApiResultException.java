@@ -1,5 +1,8 @@
 package com.silverpop.api.client;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class ApiResultException extends Exception {
 
@@ -13,5 +16,13 @@ public class ApiResultException extends Exception {
 	
 	public ApiErrorResult getErrorResult() {
 		return errorResult;
+	}
+	
+	@Override
+	public String toString() {
+		Map<String, ? super Object> fieldValues = new HashMap<String, Object>();
+		fieldValues.put("msg",     getMessage());
+		fieldValues.put("errorResult",    errorResult);
+		return getClass().getSimpleName() + "[" + fieldValues + "]";
 	}
 }

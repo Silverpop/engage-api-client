@@ -1,8 +1,10 @@
 package com.silverpop.api.client.xmlapi;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.silverpop.api.client.ApiErrorResult;
 import com.silverpop.api.client.xmlapi.result.elements.XmlApiErrorResultDetail;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
@@ -57,5 +59,16 @@ public class XmlApiErrorResult implements ApiErrorResult {
 
 	public XmlApiErrorResultDetail getDetail() {
 		return detail;
+	}
+	
+	@Override
+	public String toString() {
+		Map<String, ? super Object> fieldValues = new HashMap<String, Object>();
+		fieldValues.put("requeset",     requeset);
+		fieldValues.put("faultCode",    faultCode);
+		fieldValues.put("faultString",  faultString);
+		fieldValues.put("detail",       detail);
+		fieldValues.put("responseText", responseText);
+		return getClass().getSimpleName() + "[" + fieldValues + "]";
 	}
 }
