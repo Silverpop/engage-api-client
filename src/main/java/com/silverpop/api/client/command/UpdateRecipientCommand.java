@@ -11,28 +11,34 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 @XmlApiProperties("AddRecipient")
-public class AddRecipientCommand implements ApiCommand {
+public class UpdateRecipientCommand implements ApiCommand {
 
     @XStreamAlias("LIST_ID")
     private Integer listId;
 
-    @XStreamAlias("CREATED_FROM")
-    private Integer createdFrom;
+    @XStreamAlias("OLD_EMAIL")
+    private String oldEmail;
+
+    @XStreamAlias("RECIPIENT_ID")
+    private String recipientId;
+
+    @XStreamAlias("ENCODED_RECIPIENT_ID")
+    private String encodedRecipientId;
 
     @XStreamAlias("SEND_AUTOREPLY")
     private Boolean sendAutoreply;
 
-    @XStreamAlias("UPDATE_IF_FOUND")
-    private Boolean updateIfFound;
-
     @XStreamAlias("ALLOW_HTML")
     private Boolean allowHtml;
+
+    @XStreamAlias("VISITOR_KEY")
+    private String visitorKey;
 
     @XStreamImplicit(itemFieldName="COLUMN")
     private List<Column> columns;
 
 
-    public AddRecipientCommand () {
+    public UpdateRecipientCommand() {
         columns = new ArrayList<Column>();
     }
 
@@ -49,12 +55,28 @@ public class AddRecipientCommand implements ApiCommand {
         this.listId = listId;
     }
 
-    public Integer getCreatedFrom() {
-        return createdFrom;
+    public String getOldEmail() {
+        return oldEmail;
     }
 
-    public void setCreatedFrom(Integer createdFrom) {
-        this.createdFrom = createdFrom;
+    public void setOldEmail(String oldEmail) {
+        this.oldEmail = oldEmail;
+    }
+
+    public String getRecipientId() {
+        return recipientId;
+    }
+
+    public void setRecipientId(String recipientId) {
+        this.recipientId = recipientId;
+    }
+
+    public String getEncodedRecipientId() {
+        return encodedRecipientId;
+    }
+
+    public void setEncodedRecipientId(String encodedRecipientId) {
+        this.encodedRecipientId = encodedRecipientId;
     }
 
     public Boolean getSendAutoreply() {
@@ -65,20 +87,24 @@ public class AddRecipientCommand implements ApiCommand {
         this.sendAutoreply = sendAutoreply;
     }
 
-    public Boolean getUpdateIfFound() {
-        return updateIfFound;
-    }
-
-    public void setUpdateIfFound(Boolean updateIfFound) {
-        this.updateIfFound = updateIfFound;
-    }
-
     public Boolean getAllowHtml() {
         return allowHtml;
     }
 
     public void setAllowHtml(Boolean allowHtml) {
         this.allowHtml = allowHtml;
+    }
+
+    public String getVisitorKey() {
+        return visitorKey;
+    }
+
+    public void setVisitorKey(String visitorKey) {
+        this.visitorKey = visitorKey;
+    }
+
+    public void setColumns(List<Column> columns) {
+        this.columns = columns;
     }
 
     public List<Column> getColumns() {
