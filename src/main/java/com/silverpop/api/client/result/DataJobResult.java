@@ -6,7 +6,7 @@ import com.silverpop.api.client.ApiResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("RESULT")
-public class DataJobResult implements ApiResult{
+public class DataJobResult implements ApiResult {
 
 	@XStreamAlias("JOB_ID")
 	private String jobId;
