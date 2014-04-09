@@ -4,13 +4,17 @@ import com.silverpop.api.client.ApiException;
 import com.silverpop.api.client.ApiResultException;
 import com.silverpop.api.client.ApiSession;
 import com.silverpop.api.client.command.LoginCommand;
+import com.silverpop.api.client.command.LogoutCommand;
 import com.silverpop.api.client.result.LoginResult;
+import com.silverpop.api.client.result.LogoutResult;
 
 public class XmlApiSession implements ApiSession {
 
 	private boolean open;
 	private LoginCommand loginCommand;
 	private XmlApiClient loginClient;
+    private LogoutCommand logoutCommand;
+    private XmlApiClient logoutClient;
 	private String url;
 	private boolean reauthenticate;
 	
@@ -27,9 +31,10 @@ public class XmlApiSession implements ApiSession {
 		this.loginCommand = loginCommand;
 		this.loginClient = loginClient;
 		this.reauthenticate = reauthenticate;
-		clearState();
+        this.logoutClient = new XmlApiClient(this);
+        this.logoutCommand = new LogoutCommand();
+        clearState();
 	}
-
 
 	private void clearState() {
 		sessionId = "";
@@ -55,8 +60,11 @@ public class XmlApiSession implements ApiSession {
 
 	@Override
 	public void close() {
-		clearState();
-	}
+        if (isOpen()) {
+            executeLogout();
+        }
+        clearState();
+    }
 
 	@Override
 	public void open() {
@@ -75,12 +83,19 @@ public class XmlApiSession implements ApiSession {
 		}
 	}
 
+    private LogoutResult executeLogout(){
+        try {
+            return (LogoutResult) logoutClient.executeCommand(logoutCommand);
+        } catch (ApiResultException e){
+            throw new ApiException("Unable to logout: " + e.getErrorResult().getMessage());
+        }
+    }
+
 	private void setSessionValues(LoginResult result) {
 		sessionId = result.getSessionId();
 		organizationId = result.getOrganizationId();
 		sessionEncoding = result.getSessionEncoding();
 	}
-	
 	
 	public String getSessionId() {
 		return sessionId;
