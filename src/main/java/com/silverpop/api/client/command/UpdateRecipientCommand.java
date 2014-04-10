@@ -10,7 +10,7 @@ import com.silverpop.api.client.result.RecipientResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
-@XmlApiProperties("AddRecipient")
+@XmlApiProperties("UpdateRecipient")
 public class UpdateRecipientCommand implements ApiCommand {
 
     @XStreamAlias("LIST_ID")
