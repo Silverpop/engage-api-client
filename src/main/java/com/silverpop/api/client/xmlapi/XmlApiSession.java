@@ -18,7 +18,6 @@ public class XmlApiSession implements ApiSession {
 	private LoginCommand loginCommand;
 	private XmlApiClientFactory clientFactory;
 	private String url;
-	private boolean reauthenticate;
 
 	private String organizationId;
 	private String sessionId;
