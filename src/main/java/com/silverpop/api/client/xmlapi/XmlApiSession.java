@@ -19,9 +19,35 @@ public class XmlApiSession implements ApiSession {
 	private XmlApiClientFactory clientFactory;
 	private String url;
 
-	private String organizationId;
-	private String sessionId;
-	private String sessionEncoding;
+    private String sessionId;
+    private String sessionEncoding;
+    private String organizationId;
+    private boolean reauthenticate;
+
+
+    /**
+     * @deprecated
+     * It is no longer necessary to pass a client in the constructor.
+     * Please use XmlApiSession(String url, LoginCommand loginCommand) instead.
+     * This constructor will be removed in a future release.
+     */
+    @Deprecated
+    public XmlApiSession(String url, LoginCommand loginCommand, XmlApiClient loginClient) {
+        this(url, loginCommand);
+    }
+
+    /**
+     * @deprecated
+     * It is no longer necessary to pass a client in the constructor.
+     * Please use XmlApiSession(String url, LoginCommand loginCommand) instead.
+     * If you want to disable reauthentication, call #disableReauthentication() on your session.
+     * This constructor will be removed in a future release.
+     */
+    @Deprecated
+    public XmlApiSession(String url, LoginCommand loginCommand, XmlApiClient loginClient, boolean reauthenticate) {
+        this(url, loginCommand);
+        this.reauthenticate = reauthenticate;
+    }
 
 	public XmlApiSession(String url, LoginCommand loginCommand) {
 		this(url, loginCommand, new XmlApiClientFactory());
@@ -31,6 +57,7 @@ public class XmlApiSession implements ApiSession {
 		this.url = url;
 		this.loginCommand = loginCommand;
 		this.clientFactory = clientFactory;
+        this.reauthenticate = true;
         clearState();
 	}
 
@@ -48,7 +75,7 @@ public class XmlApiSession implements ApiSession {
 
 	@Override
 	public boolean isReAuthenticate() {
-		return true;
+		return reauthenticate;
 	}
 
 	@Override
@@ -73,7 +100,7 @@ public class XmlApiSession implements ApiSession {
 		}
 	}
 
-	private LoginResult executeLogin() {
+    private LoginResult executeLogin() {
 		try {
             XmlApiClient client = clientFactory.createClient(url);
 			return (LoginResult) client.executeCommand(loginCommand);
@@ -97,6 +124,7 @@ public class XmlApiSession implements ApiSession {
 		sessionEncoding = result.getSessionEncoding();
 	}
 
+
 	public String getSessionId() {
 		return sessionId;
 	}
@@ -112,4 +140,8 @@ public class XmlApiSession implements ApiSession {
 	public String getUserName() {
 		return loginCommand == null ? null : loginCommand.getUsername();
 	}
+
+    public void disableReauthentication() {
+        reauthenticate = false;
+    }
 }
