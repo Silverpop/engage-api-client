@@ -24,6 +24,8 @@ public class SelectRecipientDataCommand implements ApiCommand {
     @XStreamAlias("VISITOR_KEY")
     private String visitorKey;
 
+	@XStreamImplicit(itemFieldName="COLUMN")
+	private List<Column> columns;
 
 	@Override
 	public Class<? extends ApiResult> getResultType() {
@@ -50,6 +52,10 @@ public class SelectRecipientDataCommand implements ApiCommand {
     public Long getRecipientId() {
         return recipientId;
     }
+	
+	public List<Column> getColumns() {
+		return colums;
+	}
 
     public void setListId(Integer listId) {
         this.listId = listId;
