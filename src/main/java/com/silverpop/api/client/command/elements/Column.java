@@ -13,6 +13,10 @@ public class Column {
     @XStreamAlias("VALUE")
     private String value;
 
+    public Column() {
+    	
+    }
+    
     public Column(String name, String value) {
         this.name = name;
         this.value = value;
