@@ -18,27 +18,35 @@ import com.thoughtworks.xstream.XStream;
 
 public class XmlApiRequest implements ApiRequest {
 
-	public static final String SESSION_PARAMETER = "jsessionid";
 	public static final String XML_PARAMETER = "xml";
 
 	private ApiCommand apiCommand;
-	private ApiSession apiSession;
-	private XStreamFactory xStreamFactory;
+    private XStreamFactory xStreamFactory;
 	private ApiAnnotationUtility<XmlApiProperties> annotationUtility;
     private String encoding;
     Map<String,String> headers = new HashMap<String, String>();
 
-	public XmlApiRequest(ApiCommand apiCommand, ApiSession apiSession) {
-		this(apiCommand, apiSession, new XStreamFactory(), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
+    public XmlApiRequest(ApiCommand apiCommand) {
+        this(apiCommand, new XStreamFactory(), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
+    }
+
+    /**
+     * @deprecated
+     * It is no longer necessary to pass a {@link ApiSession} in the constructor.
+     * Please use {@link #XmlApiRequest(ApiCommand apiCommand)} instead.
+     * This constructor will be removed in a future release.
+     */
+    @Deprecated
+	public XmlApiRequest(ApiCommand apiCommand, ApiSession apiSessionIsNotUsed) {
+		this(apiCommand, new XStreamFactory(), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
 	}
-	
-	XmlApiRequest(ApiCommand apiCommand, ApiSession apiSession, XStreamFactory xStreamFactory, ApiAnnotationUtility<XmlApiProperties> annotationUtility) {
+
+    XmlApiRequest(ApiCommand apiCommand, XStreamFactory xStreamFactory, ApiAnnotationUtility<XmlApiProperties> annotationUtility) {
         setCommandAndEncoding(apiCommand);
-		this.apiSession = apiSession;
-		this.xStreamFactory = xStreamFactory;
-		this.annotationUtility = annotationUtility;
-	}
-	
+        this.xStreamFactory = xStreamFactory;
+        this.annotationUtility = annotationUtility;
+    }
+
 	@Override
 	public Map<String,String> getHeaders() {
         if (!EncodedApiCommand.NO_ENCODING.equals(encoding)) {
@@ -60,7 +68,6 @@ public class XmlApiRequest implements ApiRequest {
 	@Override
 	public Map<String, String> getParameters() {
 		Map<String,String> requestParameters = new HashMap<String,String>();
-		requestParameters.put(SESSION_PARAMETER, apiSession.getSessionId());
 		requestParameters.put(XML_PARAMETER, marshallCommand());
 		
 		return requestParameters;

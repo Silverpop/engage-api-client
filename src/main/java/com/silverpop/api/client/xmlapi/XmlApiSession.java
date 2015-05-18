@@ -70,7 +70,7 @@ public class XmlApiSession implements ApiSession {
 
 	@Override
 	public String getUrl() {
-		return url;
+		return url + ";jsessionid=" + sessionId;
 	}
 
 	@Override

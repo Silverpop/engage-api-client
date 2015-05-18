@@ -2,8 +2,6 @@ package com.silverpop.api.client.xmlapi;
 
 import static org.testng.Assert.*;
 
-import static org.mockito.Mockito.when;
-
 import java.util.Map;
 
 import org.mockito.Mock;
@@ -14,14 +12,10 @@ import org.testng.annotations.Test;
 import com.silverpop.api.client.ApiAnnotationUtility;
 import com.silverpop.api.client.ApiResult;
 import com.silverpop.api.client.XmlApiProperties;
-import com.silverpop.api.client.xmlapi.XmlApiSession;
 import com.silverpop.api.client.xmlapi.util.XStreamFactory;
-import com.silverpop.api.client.xmlapi.XmlApiRequest;
 
 public class XmlApiRequestTest {
 
-	public static final String JSESSION_ID = "[JSESSIONID]";
-	
 	private XmlApiRequest request;
 	private XStreamFactory xStreamFactory;
 	private XmlApiCommandImpl apiCommand ;
@@ -43,9 +37,7 @@ public class XmlApiRequestTest {
 		annotationUtility = new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class);
 		apiCommand = new XmlApiCommandImpl();
 		
-		when(apiSession.getSessionId()).thenReturn(JSESSION_ID);
-		
-		request = new com.silverpop.api.client.xmlapi.XmlApiRequest(apiCommand, apiSession, xStreamFactory, annotationUtility);
+		request = new com.silverpop.api.client.xmlapi.XmlApiRequest(apiCommand, xStreamFactory, annotationUtility);
 	}
 	
 	@Test
@@ -54,14 +46,13 @@ public class XmlApiRequestTest {
 	}
 	
 	@Test
-	public void getParametersReturnsTwoParametersNamedXmlAndJsessionId() {
+	public void getParametersReturnsOneParametersNamedXml() {
 		Map<String,String> parameters = request.getParameters();
 		
-		assertTrue(parameters.containsKey(XmlApiRequest.SESSION_PARAMETER));
 		assertTrue(parameters.containsKey(XmlApiRequest.XML_PARAMETER));
 	}
-	
-	@Test
+
+    @Test
 	public void marshallRequestWrapsCommandInEnvelopeAndBody() {
 		Map<String,String> parameters = request.getParameters();
 		String xml = parameters.get(XmlApiRequest.XML_PARAMETER);
@@ -71,10 +62,4 @@ public class XmlApiRequestTest {
 		assertTrue(xml.contains("<XmlApiCommand>") && xml.contains("</XmlApiCommand>"));
 	}
 	
-	@Test
-	public void jsessionIdParameterIsFromSession() {
-		Map<String,String> parameters = request.getParameters();
-		
-		assertEquals(parameters.get(XmlApiRequest.SESSION_PARAMETER), JSESSION_ID);
-	}
 }
