@@ -1,0 +1,4 @@
+<Envelope><Body><RESULT><SUCCESS>TRUE</SUCCESS><MODELS><MODEL><ID>5435</ID><NAME>LeadStatusScoringModel</NAME><DESCRIPTION>This model is used to quality leads into SFDC promotions</DESCRIPTION><CREATED>10/12/11 10:15 PM</CREATED><LAST_MODIFIED>10/23/11 04:18 PM</LAST_MODIFIED><SCORE_COMPONENTS><SCORE_COMPONENT><KEY>totalScore</KEY><DESCRIPTION>This is the overall score for the contact</DESCRIPTION></SCORE_COMPONENT><SCORE_COMPONENT>
+<KEY>behaviorScore</KEY><DESCRIPTION>This is the behavior score for the contact</DESCRIPTION></SCORE_COMPONENT><SCORE_COMPONENT>
+<KEY>totalRank</KEY><DESCRIPTION>This is the rank for the contact based on their total score</DESCRIPTION><VALUES><VALUE>Hot</VALUE><VALUE>Warm</VALUE><VALUE>Cold</VALUE></VALUES></SCORE_COMPONENT></SCORE_COMPONENTS></MODEL>
+</MODELS></RESULT></Body></Envelope>
