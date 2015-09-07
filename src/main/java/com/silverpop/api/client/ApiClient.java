@@ -9,6 +9,8 @@ import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.silverpop.api.client.command.LoginCommand;
+import com.silverpop.api.client.command.LogoutCommand;
 import com.silverpop.api.client.xmlapi.NoResponseApiErrorResult;
 
 public abstract class ApiClient<REQUEST extends ApiRequest> {
@@ -43,7 +45,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
         try {
             return validateSessionAndExecuteCommand(command, requestHeaders);
         } catch(ApiResultException e) {
-            if(retryCommand(e.getErrorResult())) {
+            if(retryCommand(e.getErrorResult(), command)) {
                 getSession().close();
                 return validateSessionAndExecuteCommand(command, requestHeaders);
             } else {
@@ -52,11 +54,11 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
         }
     }
 
-	private boolean retryCommand(ApiErrorResult errorResult) {
-		return errorResult.isSessionLost() && getSession().isReAuthenticate();
+	private boolean retryCommand(ApiErrorResult errorResult, ApiCommand command) {
+		return errorResult.isSessionLost() && getSession().isReAuthenticate() && !(command instanceof LogoutCommand);
 	}
 
-	private ApiResult validateSessionAndExecuteCommand(ApiCommand command, Map<String,String> requestHeaders) throws ApiResultException {
+    protected ApiResult validateSessionAndExecuteCommand(ApiCommand command, Map<String,String> requestHeaders) throws ApiResultException {
 		ensureSessionIsOpen();
 
 		REQUEST request = commandProcessor.prepareRequest(command, getSession());
