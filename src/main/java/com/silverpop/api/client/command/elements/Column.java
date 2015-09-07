@@ -13,6 +13,12 @@ public class Column {
     @XStreamAlias("VALUE")
     private String value;
 
+    @XStreamAlias("DEFAULT_VALUE")
+    private String defaultValue;
+
+    @XStreamAlias("TYPE")
+    private Integer type;
+
     public Column() {
     	
     }
@@ -36,5 +42,21 @@ public class Column {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 }
