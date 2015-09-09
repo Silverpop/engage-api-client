@@ -53,7 +53,7 @@ public class CommandResponseTests {
 	}
 	
 	private ApiResponse processResponse(String file, ApiCommand command) {
-		XmlApiRequest request = new XmlApiRequest(command, null);
+		XmlApiRequest request = new XmlApiRequest(command);
 		String testResult = openTestFile(file);
 		
 		return commandProcessor.processResponse(testResult, request.getResultType());

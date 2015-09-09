@@ -23,7 +23,7 @@ public class XmlApiClient extends ApiClient<XmlApiRequest>{
 	}
 	
 	public String getCommandString(ApiCommand command) {
-		XmlApiRequest request = new XmlApiRequest(command, getSession());
+		XmlApiRequest request = new XmlApiRequest(command);
 		return request.marshallCommand();
 	}
 }

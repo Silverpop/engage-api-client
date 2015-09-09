@@ -36,7 +36,7 @@ public class GetScoringModelsCommandResponseTests {
 	
 	
 	private ApiResponse processResponse(String file, ApiCommand command) {
-		XmlApiRequest request = new XmlApiRequest(command, null);
+		XmlApiRequest request = new XmlApiRequest(command);
 		String is = openTestFile(file);
 		
 		return commandProcessor.processResponse(is, request.getResultType());

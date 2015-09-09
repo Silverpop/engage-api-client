@@ -32,7 +32,7 @@ public class GetScoringModelsCommandRequestTests {
 	}
 	
 	private String printRequestFromCommand(ApiCommand command) {
-		request = new XmlApiRequest(command, xmlApiSession);
+		request = new XmlApiRequest(command);
 		return request.marshallCommand();
 	}
 
