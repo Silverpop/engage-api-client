@@ -17,11 +17,11 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
     private Log log = LogFactory.getLog(this.getClass());
 
 	@Override
-	public XmlApiRequest prepareRequest(ApiCommand command, ApiSession session) {
-		return new XmlApiRequest(command, (XmlApiSession) session);
+	public XmlApiRequest prepareRequest(ApiCommand command) {
+		return new XmlApiRequest(command);
 	}
 
-	
+
 	@Override
 	public HttpMethodBase prepareMethod(String url, XmlApiRequest request) {
 		PostMethod postMethod = new PostMethod(url);
@@ -54,5 +54,13 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 		return new XmlApiResponse(response, resultClass);
 	}
 
+	/**
+	 * @deprecated The session is not needed to prepare the request. Use {@link #prepareRequest(ApiCommand)} instead.
+     */
+	@Override
+	@Deprecated
+	public XmlApiRequest prepareRequest(ApiCommand command, ApiSession session) {
+		return prepareRequest(command);
+	}
 
 }
