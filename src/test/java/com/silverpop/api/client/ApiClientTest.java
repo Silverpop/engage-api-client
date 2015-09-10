@@ -90,9 +90,7 @@ public class ApiClientTest {
 		} catch(ApiResultException e) {
 			assertEquals(e.getErrorResult(), apiErrorResult);
 			assertEquals(e.getMessage(), "API call '" + apiCommand.getClass().getName() + "' unsuccessful.");
-		} catch(Exception e) {
-			fail("Expected ApiResultException, but got " + e);
 		}
 	}
-	
+
 }
