@@ -3,6 +3,7 @@ package com.silverpop.api.client.command;
 import java.util.List;
 import java.util.ArrayList;
 
+
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.command.elements.Column;
