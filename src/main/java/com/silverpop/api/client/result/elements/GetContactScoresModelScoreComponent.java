@@ -9,14 +9,26 @@ public class GetContactScoresModelScoreComponent {
     private String key;
 
     @XStreamAlias("VALUE")
-    private Integer value;
+    private String value;
 
     public String getKey() {
         return key;
     }
 
-    public Integer getValue() {
+    public String getValue() {
         return value;
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return key + "=" + value;
+    }
 }

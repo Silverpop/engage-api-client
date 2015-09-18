@@ -13,7 +13,7 @@ public class GetContactScoresModel {
     @XStreamAlias("NAME")
     private String name;
 
-    @XStreamAlias("SCORE_COMPONENETS")
+    @XStreamAlias("SCORE_COMPONENTS")
     private List<GetContactScoresModelScoreComponent> scoreComponents;
 
     public void setId(Integer id) {
@@ -34,5 +34,18 @@ public class GetContactScoresModel {
 
     public List<GetContactScoresModelScoreComponent> getScoreComponents() {
         return scoreComponents;
+    }
+
+    public void setScoreComponents(List<GetContactScoresModelScoreComponent> scoreComponents) {
+        this.scoreComponents = scoreComponents;
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer stringBuffer = new StringBuffer(this.getName() + ": ");
+        for (GetContactScoresModelScoreComponent score : scoreComponents) {
+            stringBuffer.append(score + ", ");
+        }
+        return stringBuffer.substring(0, stringBuffer.length() - 2);
     }
 }

@@ -11,18 +11,18 @@ import com.silverpop.api.client.result.GetContactScoresResult;
 public class GetContactScoresCommand implements ApiCommand {
 	
 	@XStreamAlias("CONTACT_ID")
-	private Integer contactId;
+	private Long contactId;
 
 	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return GetContactScoresResult.class;
 	}
 	
-	public void setContactId(Integer contactId) {
+	public void setContactId(Long contactId) {
 		this.contactId = contactId;
 	}
 	
-	public Integer getContactId() {
+	public Long getContactId() {
 		return contactId;
 	}
 }
