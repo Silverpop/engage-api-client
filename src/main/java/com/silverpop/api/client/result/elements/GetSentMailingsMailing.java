@@ -11,32 +11,36 @@ public class GetSentMailingsMailing {
 
 	@XStreamAlias("MailingId")
 	private Integer mailingId;
-	
+
 	@XStreamAlias("ReportId")
 	private Integer reportId;
-	
+
 	@XStreamAlias("MailingName")
 	private String mailingName;
-	
+
 	@XStreamAlias("ListName")
 	private String listName;
-	
+
 	@XStreamAlias("ListId")
 	private Integer listId;
-	
+
 	@XStreamAlias("UserName")
 	private String userName;
-	
+
 	@XStreamAlias("NumSent")
 	private Integer numberSent;
-	
+
 	@XStreamAlias("Subject")
 	private String subject;
 
-    // TODO
-    // @XStreamAlias("Visibility")
-    // @XStreamAlias("ScheduledTS")
-    // @XStreamAlias("SentTS")
+  @XStreamAlias("Visibility")
+	private PrivateShared visibility;
+
+	@XStreamAlias("ScheduledTS")
+	private String scheduledts;
+
+	@XStreamAlias("SentTS")
+	private String sentts;
 
 
     public Integer getMailingId() {
@@ -102,5 +106,35 @@ public class GetSentMailingsMailing {
     public void setSubject(String subject) {
         this.subject = subject;
     }
+
+		public PrivateShared getVisibility()
+		{
+			return visibility;
+		}
+
+		public void setVisibility(PrivateShared visibility)
+		{
+			this.visibility = visibility;
+		}
+
+		public String getScheduledTS()
+		{
+			return scheduledts;
+		}
+
+		public void setScheduledTS(String scheduledts)
+		{
+			this.scheduledts = scheduledts;
+		}
+
+		public String getSentTS()
+		{
+			return sentts;
+		}
+
+		public void setSentTS(String sentts)
+		{
+			this.sentts = sentts;
+		}
 
 }
