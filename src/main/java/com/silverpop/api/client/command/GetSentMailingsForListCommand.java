@@ -6,9 +6,14 @@ import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.result.GetSentMailingsForOrgResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XmlApiProperties("GetSentMailingsForOrg")
-public class GetSentMailingsForOrgCommand implements ApiCommand {
+@XmlApiProperties("GetSentMailingsForList")
+public class GetSentMailingsForListCommand implements ApiCommand {
 
+  @XStreamAlias("LIST_ID")
+  protected String listid;
+
+  @XStreamAlias("INCLUDE_CHILDREN")
+  protected String includechildren;
 
 	@XStreamAlias("DATE_START")
 	private String startDate;
@@ -22,7 +27,7 @@ public class GetSentMailingsForOrgCommand implements ApiCommand {
 	@XStreamAlias("SHARED")
 	protected String shared;
 
-	@XStreamAlias("SCHEDULED")
+	@XStreamAlias( "SCHEDULED")
 	protected String scheduled;
 
 	@XStreamAlias("SENT")
@@ -71,6 +76,25 @@ public class GetSentMailingsForOrgCommand implements ApiCommand {
 		return GetSentMailingsForOrgResult.class;
 	}
 
+  public String getListId()
+  {
+    return listid;
+  }
+
+  public void setListId(String listid)
+  {
+    this.listid = listid;
+  }
+
+  public String getIncludeChildren()
+  {
+    return includechildren;
+  }
+
+  public void setIncludeChildren(String includechildren)
+  {
+    this.includechildren = includechildren;
+  }
 
 	public String getStartDate() {
 		return startDate;

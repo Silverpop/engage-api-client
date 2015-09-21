@@ -3,11 +3,11 @@ package com.silverpop.api.client.command;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.ApiResult;
 import com.silverpop.api.client.XmlApiProperties;
-import com.silverpop.api.client.result.GetSentMailingsForOrgResult;
+import com.silverpop.api.client.result.GetSentMailingsForUserResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XmlApiProperties("GetSentMailingsForOrg")
-public class GetSentMailingsForOrgCommand implements ApiCommand {
+@XmlApiProperties("GetSentMailingsForUser")
+public class GetSentMailingsForUserCommand implements ApiCommand {
 
 
 	@XStreamAlias("DATE_START")
@@ -15,6 +15,9 @@ public class GetSentMailingsForOrgCommand implements ApiCommand {
 
 	@XStreamAlias("DATE_END")
 	private String endDate;
+
+  @XStreamAlias("OPTIONALUSER")
+  protected String optionaluser;
 
 	@XStreamAlias("PRIVATE")
 	protected String _private;
@@ -68,7 +71,7 @@ public class GetSentMailingsForOrgCommand implements ApiCommand {
 
 	@Override
 	public Class<? extends ApiResult> getResultType() {
-		return GetSentMailingsForOrgResult.class;
+		return GetSentMailingsForUserResult.class;
 	}
 
 
@@ -87,6 +90,16 @@ public class GetSentMailingsForOrgCommand implements ApiCommand {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
+
+  public String getOptionaluser()
+  {
+    return optionaluser;
+  }
+
+  public void setOptionaluser(String optionaluser)
+  {
+    this.optionaluser = optionaluser;
+  }
 
 	public String getPrivate()
 	{
