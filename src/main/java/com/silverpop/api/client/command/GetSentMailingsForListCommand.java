@@ -3,6 +3,7 @@ package com.silverpop.api.client.command;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.ApiResult;
 import com.silverpop.api.client.XmlApiProperties;
+import com.silverpop.api.client.result.GetSentMailingsForListResult;
 import com.silverpop.api.client.result.GetSentMailingsForOrgResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
@@ -73,7 +74,7 @@ public class GetSentMailingsForListCommand implements ApiCommand {
 
 	@Override
 	public Class<? extends ApiResult> getResultType() {
-		return GetSentMailingsForOrgResult.class;
+		return GetSentMailingsForListResult.class;
 	}
 
   public String getListId()
