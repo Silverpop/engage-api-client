@@ -9,10 +9,10 @@ public class CreateQueryResult implements ApiResult {
     @XStreamAlias("SUCCESS")
     private boolean success;
 
-    @XStreamAlias("LIST_ID")
+    @XStreamAlias("ListId")
     private long listId;
 
-    public long getContactListId() {
+    public long getListId() {
         return listId;
     }
 
