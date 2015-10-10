@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.silverpop.api.client.ApiResult;
-import com.silverpop.api.client.command.elements.Column;
+import com.silverpop.api.client.command.elements.ColumnElementType;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
@@ -36,10 +36,10 @@ public class SelectRecipientDataResult implements ApiResult {
     private String optedOutDateAsString;
 
     @XStreamImplicit(itemFieldName="COLUMNS")
-    private List<Column> columns;
+    private List<ColumnElementType> columnElementTypes;
 
     public SelectRecipientDataResult() {
-        columns = new ArrayList<Column>();
+        columnElementTypes = new ArrayList<ColumnElementType>();
     }
 
     public boolean isSuccessElement() {
@@ -74,8 +74,8 @@ public class SelectRecipientDataResult implements ApiResult {
         return optedOutDateAsString;
     }
 
-	public List<Column> getColumns() {
-		return columns;
+	public List<ColumnElementType> getColumns() {
+		return columnElementTypes;
 	}
 
 }

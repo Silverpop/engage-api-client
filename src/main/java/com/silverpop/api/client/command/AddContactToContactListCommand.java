@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.XmlApiProperties;
-import com.silverpop.api.client.command.elements.Column;
+import com.silverpop.api.client.command.elements.ColumnElementType;
 import com.silverpop.api.client.result.AddContactToContactListResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
@@ -22,11 +22,11 @@ public class AddContactToContactListCommand implements ApiCommand{
   private String contactid;
 
   @XStreamImplicit(itemFieldName="COLUMN")
-  private List<Column> columns;
+  private List<ColumnElementType> columnElementTypes;
 
   public AddContactToContactListCommand()
   {
-    columns = new ArrayList<Column>();
+    columnElementTypes = new ArrayList<ColumnElementType>();
   }
 
   public long getContactListId()
@@ -49,16 +49,16 @@ public class AddContactToContactListCommand implements ApiCommand{
     this.contactid = id;
   }
 
-  public void setColumns(List<Column> columns) {
-      this.columns = columns;
+  public void setColumns(List<ColumnElementType> columns) {
+      this.columnElementTypes = columns;
   }
 
-  public List<Column> getColumns() {
-      return columns;
+  public List<ColumnElementType> getColumns() {
+      return columnElementTypes;
   }
 
-  public void addColumn(final Column column) {
-      this.columns.add(column);
+  public void addColumn(final ColumnElementType column) {
+      this.columnElementTypes.add(column);
   }
 
   @Override
