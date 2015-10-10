@@ -24,7 +24,7 @@ public class CreateQueryCommand implements ApiCommand
     protected Long parentfolderid;
 
     @XStreamAlias("ALLOW_FIELD_CHANGE")
-    protected boolean allowfieldchange;
+    protected int allowfieldchange;
 
     @XStreamAlias("SELECT_COLUMNS")
     protected String selectcolumns;
@@ -67,11 +67,11 @@ public class CreateQueryCommand implements ApiCommand
         this.parentfolderid = parentfolderid;
     }
 
-    public boolean isAllowfieldchange() {
+    public int isAllowfieldchange() {
         return allowfieldchange;
     }
 
-    public void setAllowfieldchange(boolean allowfieldchange) {
+    public void setAllowfieldchange(int allowfieldchange) {
         this.allowfieldchange = allowfieldchange;
     }
 
