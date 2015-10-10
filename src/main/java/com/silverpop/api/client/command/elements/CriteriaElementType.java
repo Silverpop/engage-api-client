@@ -8,6 +8,9 @@
 
 package com.silverpop.api.client.command.elements;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -36,16 +39,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "CriteriaElementType", propOrder = {
-    "type",
-    "expressions"
-})
+@XStreamAlias("CRITERIA")
 public class CriteriaElementType {
 
-    @XmlElement(name = "TYPE", required = true)
-    protected CriteriaType type;
-    @XmlElement(name = "EXPRESSION")
+    @XStreamAlias("TYPE")
+    protected String type;
+    @XStreamImplicit(itemFieldName = "EXPRESSION")
     protected List<ExpressionElementType> expressions;
 
     /**
@@ -53,10 +52,10 @@ public class CriteriaElementType {
      * 
      * @return
      *     possible object is
-     *     {@link CriteriaType }
+     *     {@link String }
      *     
      */
-    public CriteriaType getTYPE() {
+    public String getTYPE() {
         return type;
     }
 
@@ -65,10 +64,10 @@ public class CriteriaElementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link CriteriaType }
+     *     {@link String }
      *     
      */
-    public void setTYPE(CriteriaType value) {
+    public void setTYPE(String value) {
         this.type = value;
     }
 

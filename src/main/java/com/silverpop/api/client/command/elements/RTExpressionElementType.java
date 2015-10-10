@@ -8,10 +8,7 @@
 
 package com.silverpop.api.client.command.elements;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 
 /**
@@ -39,31 +36,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "RTExpressionElementType", propOrder = {
-    "andor",
-    "type",
-    "columnname",
-    "operators",
-    "values",
-    "rightparens",
-    "leftparens"
-})
+@XStreamAlias("")
 public class RTExpressionElementType {
 
-    @XmlElement(name = "AND_OR")
-    protected AndOr andor;
-    @XmlElement(name = "TYPE")
-    protected ExpressionType type;
-    @XmlElement(name = "COLUMN_NAME")
+    @XStreamAlias("AND_OR")
+    protected String andor;
+    @XStreamAlias("TYPE")
+    protected String type;
+    @XStreamAlias("COLUMN_NAME")
     protected String columnname;
-    @XmlElement(name = "OPERATORS")
+    @XStreamAlias("OPERATORS")
     protected String operators;
-    @XmlElement(name = "VALUES")
+    @XStreamAlias("VALUES")
     protected String values;
-    @XmlElement(name = "RIGHT_PARENS")
+    @XStreamAlias("RIGHT_PARENS")
     protected String rightparens;
-    @XmlElement(name = "LEFT_PARENS")
+    @XStreamAlias("LEFT_PARENS")
     protected String leftparens;
 
     /**
@@ -71,10 +59,10 @@ public class RTExpressionElementType {
      * 
      * @return
      *     possible object is
-     *     {@link AndOr }
+     *     {@link String }
      *     
      */
-    public AndOr getANDOR() {
+    public String getANDOR() {
         return andor;
     }
 
@@ -83,10 +71,10 @@ public class RTExpressionElementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link AndOr }
+     *     {@link String }
      *     
      */
-    public void setANDOR(AndOr value) {
+    public void setANDOR(String value) {
         this.andor = value;
     }
 
@@ -95,10 +83,10 @@ public class RTExpressionElementType {
      * 
      * @return
      *     possible object is
-     *     {@link ExpressionType }
+     *     {@link String }
      *     
      */
-    public ExpressionType getTYPE() {
+    public String getTYPE() {
         return type;
     }
 
@@ -107,10 +95,10 @@ public class RTExpressionElementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExpressionType }
+     *     {@link String }
      *     
      */
-    public void setTYPE(ExpressionType value) {
+    public void setTYPE(String value) {
         this.type = value;
     }
 

@@ -20,16 +20,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for TableColumnsElementType complex type.
+ * <p>Java class for ContentAreasElementType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TableColumnsElementType">
+ * &lt;complexType name="ContentAreasElementType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="COLUMN" type="{SilverpopApi:EngageService.ListMgmt.UserActions}TableColumnElementType" maxOccurs="unbounded"/>
+ *         &lt;element name="CONTENT_AREA" type="{SilverpopApi:EngageService.MailManagement.UserActions}ContentAreaElementType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,39 +38,39 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XStreamAlias("TABLE_COLUMNS")
-public class TableColumnsElementType {
+@XStreamAlias("CONTENT_AREAS")
+public class ContentAreasElementType {
 
-    @XStreamImplicit(itemFieldName = "COLUMN")
-    protected List<TableColumnElementType> columns;
+    @XStreamImplicit(itemFieldName = "CONTENT_AREA")
+    protected List<ContentAreaElementType> contentareas;
 
     /**
-     * Gets the value of the columnElementTypes property.
+     * Gets the value of the contentareas property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the columnElementTypes property.
+     * This is why there is not a <CODE>set</CODE> method for the contentareas property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCOLUMNS().add(newItem);
+     *    getCONTENTAREAS().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TableColumnElementType }
+     * {@link ContentAreaElementType }
      * 
      * 
      */
-    public List<TableColumnElementType> getCOLUMNS() {
-        if (columns == null) {
-            columns = new ArrayList<TableColumnElementType>();
+    public List<ContentAreaElementType> getCONTENTAREAS() {
+        if (contentareas == null) {
+            contentareas = new ArrayList<ContentAreaElementType>();
         }
-        return this.columns;
+        return this.contentareas;
     }
 
 }

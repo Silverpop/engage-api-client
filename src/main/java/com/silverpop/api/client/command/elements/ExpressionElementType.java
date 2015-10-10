@@ -8,6 +8,9 @@
 
 package com.silverpop.api.client.command.elements;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -43,37 +46,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ExpressionElementType", propOrder = {
-    "andor",
-    "type",
-    "columnname",
-    "operators",
-    "values",
-    "tableid",
-    "rightparens",
-    "leftparens",
-    "rtexpressions"
-})
+@XStreamAlias("EXPRESSION")
 public class ExpressionElementType {
 
-    @XmlElement(name = "AND_OR")
-    protected AndOr andor;
-    @XmlElement(name = "TYPE")
-    protected ExpressionType type;
-    @XmlElement(name = "COLUMN_NAME")
+    @XStreamAlias("AND_OR")
+    protected String andor;
+    @XStreamAlias("TYPE")
+    protected String type;
+    @XStreamAlias("COLUMN_NAME")
     protected String columnname;
-    @XmlElement(name = "OPERATORS")
+    @XStreamAlias("OPERATORS")
     protected String operators;
-    @XmlElement(name = "VALUES")
+    @XStreamAlias("VALUES")
     protected String values;
-    @XmlElement(name = "TABLE_ID")
+    @XStreamAlias("TABLE_ID")
     protected Long tableid;
-    @XmlElement(name = "RIGHT_PARENS")
+    @XStreamAlias("RIGHT_PARENS")
     protected String rightparens;
-    @XmlElement(name = "LEFT_PARENS")
+    @XStreamAlias("LEFT_PARENS")
     protected String leftparens;
-    @XmlElement(name = "RT_EXPRESSION")
+    @XStreamImplicit(itemFieldName = "RT_EXPRESSION")
     protected List<RTExpressionElementType> rtexpressions;
 
     /**
@@ -81,10 +73,10 @@ public class ExpressionElementType {
      * 
      * @return
      *     possible object is
-     *     {@link AndOr }
+     *     {@link String }
      *     
      */
-    public AndOr getANDOR() {
+    public String getANDOR() {
         return andor;
     }
 
@@ -93,10 +85,10 @@ public class ExpressionElementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link AndOr }
+     *     {@link String }
      *     
      */
-    public void setANDOR(AndOr value) {
+    public void setANDOR(String value) {
         this.andor = value;
     }
 
@@ -105,10 +97,10 @@ public class ExpressionElementType {
      * 
      * @return
      *     possible object is
-     *     {@link ExpressionType }
+     *     {@link String }
      *     
      */
-    public ExpressionType getTYPE() {
+    public String getTYPE() {
         return type;
     }
 
@@ -117,10 +109,10 @@ public class ExpressionElementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link ExpressionType }
+     *     {@link String }
      *     
      */
-    public void setTYPE(ExpressionType value) {
+    public void setTYPE(String value) {
         this.type = value;
     }
 

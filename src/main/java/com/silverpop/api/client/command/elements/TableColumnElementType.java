@@ -8,10 +8,7 @@
 
 package com.silverpop.api.client.command.elements;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 
 /**
@@ -38,28 +35,22 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TableColumnElementType", propOrder = {
-    "name",
-    "type",
-    "isrequired",
-    "keycolumn",
-    "defaultvalue",
-    "selectionvalues"
-})
+@XStreamAlias("COLUMN")
 public class TableColumnElementType {
 
-    @XmlElement(name = "NAME", required = true)
+    @XStreamAlias("NAME")
     protected String name;
-    @XmlElement(name = "TYPE", required = true)
-    protected TableColumnType type;
-    @XmlElement(name = "IS_REQUIRED")
+    @XStreamAlias("TYPE")
+    protected String type;
+    @XStreamAlias("VALUE")
+    protected String value;
+    @XStreamAlias("IS_REQUIRED")
     protected Boolean isrequired;
-    @XmlElement(name = "KEY_COLUMN")
+    @XStreamAlias("KEY_COLUMN")
     protected Boolean keycolumn;
-    @XmlElement(name = "DEFAULT_VALUE")
+    @XStreamAlias("DEFAULT_VALUE")
     protected String defaultvalue;
-    @XmlElement(name = "SELECTION_VALUES")
+    @XStreamAlias("SELECTION_VALUES")
     protected SelectionValuesElementType selectionvalues;
 
     /**
@@ -91,10 +82,10 @@ public class TableColumnElementType {
      * 
      * @return
      *     possible object is
-     *     {@link TableColumnType }
+     *     {@link String }
      *     
      */
-    public TableColumnType getTYPE() {
+    public String getTYPE() {
         return type;
     }
 
@@ -103,10 +94,10 @@ public class TableColumnElementType {
      * 
      * @param value
      *     allowed object is
-     *     {@link TableColumnType }
+     *     {@link String }
      *     
      */
-    public void setTYPE(TableColumnType value) {
+    public void setTYPE(String value) {
         this.type = value;
     }
 
@@ -206,4 +197,11 @@ public class TableColumnElementType {
         this.selectionvalues = value;
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

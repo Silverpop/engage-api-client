@@ -34,7 +34,7 @@ public class GetSentMailingsMailing {
 	private String subject;
 
   @XStreamAlias("Visibility")
-	private PrivateShared visibility;
+	private String visibility;
 
 	@XStreamAlias("ScheduledTS")
 	private String scheduledts;
@@ -107,12 +107,12 @@ public class GetSentMailingsMailing {
         this.subject = subject;
     }
 
-		public PrivateShared getVisibility()
+		public String getVisibility()
 		{
 			return visibility;
 		}
 
-		public void setVisibility(PrivateShared visibility)
+		public void setVisibility(String visibility)
 		{
 			this.visibility = visibility;
 		}

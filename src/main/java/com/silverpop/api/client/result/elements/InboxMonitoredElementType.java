@@ -6,7 +6,7 @@
 //
 
 
-package com.silverpop.api.client.command.elements;
+package com.silverpop.api.client.result.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
@@ -20,16 +20,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for TableColumnsElementType complex type.
+ * <p>Java class for InboxMonitoredElementType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TableColumnsElementType">
+ * &lt;complexType name="InboxMonitoredElementType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="COLUMN" type="{SilverpopApi:EngageService.ListMgmt.UserActions}TableColumnElementType" maxOccurs="unbounded"/>
+ *         &lt;element name="InboxMonitoring" type="{SilverpopApi:EngageService.Reporting}InboxMonitoringElementType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,39 +38,39 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XStreamAlias("TABLE_COLUMNS")
-public class TableColumnsElementType {
+@XStreamAlias("InboxMonitored")
+public class InboxMonitoredElementType {
 
-    @XStreamImplicit(itemFieldName = "COLUMN")
-    protected List<TableColumnElementType> columns;
+    @XStreamImplicit(itemFieldName = "InboxMonitoring")
+    protected List<InboxMonitoringElementType> inboxMonitorings;
 
     /**
-     * Gets the value of the columnElementTypes property.
+     * Gets the value of the inboxMonitorings property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the columnElementTypes property.
+     * This is why there is not a <CODE>set</CODE> method for the inboxMonitorings property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCOLUMNS().add(newItem);
+     *    getInboxMonitorings().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TableColumnElementType }
+     * {@link InboxMonitoringElementType }
      * 
      * 
      */
-    public List<TableColumnElementType> getCOLUMNS() {
-        if (columns == null) {
-            columns = new ArrayList<TableColumnElementType>();
+    public List<InboxMonitoringElementType> getInboxMonitorings() {
+        if (inboxMonitorings == null) {
+            inboxMonitorings = new ArrayList<InboxMonitoringElementType>();
         }
-        return this.columns;
+        return this.inboxMonitorings;
     }
 
 }

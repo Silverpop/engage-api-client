@@ -9,6 +9,8 @@
 package com.silverpop.api.client.result.elements;
 
 import com.silverpop.api.client.command.elements.ColumnNameElementType;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,30 +43,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FailureElementType", propOrder = {
-    "columns",
-    "keycolumns"
-})
+@XStreamAlias("FAILURE")
 public class FailureElementType {
 
-    @XmlElement(name = "COLUMN")
+    @XStreamImplicit(itemFieldName = "COLUMN")
     protected List<ColumnNameElementType> columns;
-    @XmlElement(name = "KEY_COLUMN")
+    @XStreamImplicit(itemFieldName = "KEY_COLUMN")
     protected List<ColumnNameElementType> keycolumns;
-    @XmlAttribute(name = "failure_type", required = true)
+    @XStreamAlias("failure_type")
     protected String failureType;
-    @XmlAttribute(name = "description", required = true)
+    @XStreamAlias("description")
     protected String description;
 
     /**
-     * Gets the value of the columns property.
+     * Gets the value of the columnElementTypes property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the columns property.
+     * This is why there is not a <CODE>set</CODE> method for the columnElementTypes property.
      * 
      * <p>
      * For example, to add a new item, do as follows:

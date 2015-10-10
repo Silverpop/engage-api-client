@@ -8,6 +8,9 @@
 
 package com.silverpop.api.client.result.elements;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -35,13 +38,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "FailuresElementType", propOrder = {
-    "failures"
-})
+@XStreamAlias("FAILURES")
 public class FailuresElementType {
 
-    @XmlElement(name = "FAILURE")
+    @XStreamImplicit(itemFieldName = "FAILURE")
     protected List<FailureElementType> failures;
 
     /**
