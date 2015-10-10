@@ -7,7 +7,7 @@ import com.silverpop.api.client.command.elements.DeleteRowsElementType;
 import com.silverpop.api.client.result.DeleteRelationalTableDataResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XmlApiProperties("DeleteRelationalTableDataCommand")
+@XmlApiProperties("DeleteRelationalTableData")
 public class DeleteRelationalTableDataCommand implements ApiCommand {
 
     @XStreamAlias("TABLE_ID")
