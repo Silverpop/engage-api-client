@@ -1,7 +1,31 @@
 package com.silverpop.api.client.result;
 
-/**
- * Created by PeterJLyons on 10/11/2015.
- */
-public class ValidateDCRulesetResult {
+import com.silverpop.api.client.ApiResult;
+
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("RESULT")
+public class ValidateDCRulesetResult implements ApiResult {
+
+    @XStreamAlias("success")
+    private boolean success;
+
+    @XStreamAlias("MAILING_ID")
+    private String mailingId;
+
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public String getMailingId() {
+        return mailingId;
+    }
+
+    public void setMailingId(String mailingId) {
+        this.mailingId = mailingId;
+    }
 }
