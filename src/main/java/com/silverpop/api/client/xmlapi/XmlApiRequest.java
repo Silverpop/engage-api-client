@@ -27,7 +27,7 @@ public class XmlApiRequest implements ApiRequest {
     Map<String,String> headers = new HashMap<String, String>();
 
     public XmlApiRequest(ApiCommand apiCommand) {
-        this(apiCommand, new XStreamFactory(apiCommand.getResultType()), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
+        this(apiCommand, new XStreamFactory(), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
     }
 
     /**
@@ -38,7 +38,7 @@ public class XmlApiRequest implements ApiRequest {
      */
     @Deprecated
 	public XmlApiRequest(ApiCommand apiCommand, ApiSession apiSessionIsNotUsed) {
-		this(apiCommand, new XStreamFactory(apiCommand.getResultType()), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
+		this(apiCommand, new XStreamFactory(), new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class));
 	}
 
     XmlApiRequest(ApiCommand apiCommand, XStreamFactory xStreamFactory, ApiAnnotationUtility<XmlApiProperties> annotationUtility) {
