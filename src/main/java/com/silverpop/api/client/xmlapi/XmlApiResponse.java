@@ -1,18 +1,9 @@
 package com.silverpop.api.client.xmlapi;
 
-import java.io.Reader;
 import java.io.StringReader;
-import java.io.StringWriter;
 
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathFactory;
-
-import org.w3c.dom.Document;
 
 import com.silverpop.api.client.ApiErrorResult;
 import com.silverpop.api.client.ApiException;
@@ -35,7 +26,7 @@ public class XmlApiResponse implements ApiResponse {
 	private String responseText;
 
 	public XmlApiResponse(String responseText, Class<? extends ApiResult> resultType) {
-		this(responseText, resultType, new XStreamFactory());
+		this(responseText, resultType, new XStreamFactory(resultType));
 	}
 
 	XmlApiResponse(String responseText, Class<? extends ApiResult> resultType, XStreamFactory xStreamFactory) {
