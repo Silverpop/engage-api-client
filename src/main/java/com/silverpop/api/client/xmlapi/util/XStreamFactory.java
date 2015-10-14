@@ -2,7 +2,6 @@ package com.silverpop.api.client.xmlapi.util;
 
 import java.io.Writer;
 
-import com.silverpop.api.client.ApiResult;
 import com.silverpop.api.client.mapper.wrapper.ApiMapperWrapper;
 
 import com.thoughtworks.xstream.XStream;
@@ -15,18 +14,7 @@ import com.thoughtworks.xstream.mapper.MapperWrapper;
 
 public class XStreamFactory {
 
-    private final Class<? extends ApiResult> apiResponseType;
-
-    @Deprecated
-    public XStreamFactory() {
-        this(null);
-    }
-
-    public XStreamFactory(Class<? extends ApiResult> apiResponseType) {
-        this.apiResponseType = apiResponseType;
-    }
-
-    public XStream createXStream() {
+	public XStream createXStream() {
 		return new XStream(
 			new XppDriver() {
 				@Override
@@ -35,14 +23,14 @@ public class XStreamFactory {
 				}
 			});
 	}
-
-
-
+	
+	
+	
 	public XStream createXStream(ReflectionProvider reflectionProvider) {
         return new XStream(reflectionProvider, new DomDriver("UTF-8", new XmlFriendlyNameCoder("__","_"))) {
 			@Override
 			protected MapperWrapper wrapMapper(MapperWrapper next) {
-                return new ApiMapperWrapper(next, apiResponseType);
+				return new ApiMapperWrapper(next);
 			}
 		};
 	}
