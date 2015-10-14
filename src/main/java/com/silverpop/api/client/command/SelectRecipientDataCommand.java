@@ -3,8 +3,12 @@ package com.silverpop.api.client.command;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.ApiResult;
 import com.silverpop.api.client.XmlApiProperties;
+import com.silverpop.api.client.command.elements.ColumnElementType;
 import com.silverpop.api.client.result.SelectRecipientDataResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
+import java.util.List;
 
 @XmlApiProperties("SelectRecipientData")
 public class SelectRecipientDataCommand implements ApiCommand {
@@ -24,12 +28,22 @@ public class SelectRecipientDataCommand implements ApiCommand {
     @XStreamAlias("VISITOR_KEY")
     private String visitorKey;
 
+    @XStreamImplicit(itemFieldName="COLUMNS")
+    private List<ColumnElementType> columns;
+
 
 	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return SelectRecipientDataResult.class;
 	}
 
+    public List<ColumnElementType> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(List<ColumnElementType> columns) {
+        this.columns = columns;
+    }
 
     public String getEmail() {
         return email;

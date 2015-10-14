@@ -13,15 +13,15 @@ public class XmlApiClient extends ApiClient<XmlApiRequest>{
 	public XmlApiClient(String url) {
 		this(new UnauthenticatedXmlApiSession(url));
 	}
-	
+
 	public XmlApiClient(XmlApiSession session) {
 		super(new XmlApiCommandProcessor(), session);
 	}
-	
+
 	public String getJSessionId() {
 		return session.getSessionId();
 	}
-	
+
 	public String getCommandString(ApiCommand command) {
 		XmlApiRequest request = new XmlApiRequest(command);
 		return request.marshallCommand();

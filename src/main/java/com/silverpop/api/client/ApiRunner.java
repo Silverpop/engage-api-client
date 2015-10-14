@@ -10,6 +10,7 @@ package com.silverpop.api.client;/*
 import com.silverpop.api.client.command.GetListsCommand;
 import com.silverpop.api.client.result.GetListsResult;
 import com.silverpop.api.client.result.elements.GetListsList;
+import com.silverpop.api.client.result.elements.ListElementType;
 import com.silverpop.api.client.xmlapi.XmlApiClient;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -34,9 +35,9 @@ public class ApiRunner {
         GetListsResult result = (GetListsResult)client.executeCommand(getListsCommand);
         log.debug("Got Result");
 
-        Collection<GetListsList> lists = result.getLists();
-        for (GetListsList list : lists) {
-            log.debug("List name:" +list.getName() + " - last mod : " + list.getLastModified());
+        Collection<ListElementType> lists = result.getLists();
+        for (ListElementType list : lists) {
+            log.debug("List name:" +list.getNAME() + " - last mod : " + list.getLASTMODIFIED());
         }
     }
 }
