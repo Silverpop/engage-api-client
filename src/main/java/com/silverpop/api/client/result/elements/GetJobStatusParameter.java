@@ -2,7 +2,7 @@ package com.silverpop.api.client.result.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("PARAMETERS")
+@XStreamAlias("PARAMETER")
 public class GetJobStatusParameter {
 
     @XStreamAlias("NAME")

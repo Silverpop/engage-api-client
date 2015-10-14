@@ -30,15 +30,15 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 
 		return postMethod;
 	}
-	
+
 	private PostMethod addRequestParameters(Map<String,String> parameters, PostMethod postMethod) {
 		for(String parameter: parameters.keySet()) {
 			postMethod.addParameter(parameter, parameters.get(parameter));
 		}
 		return postMethod;
 	}
-	
-	
+
+
 	private PostMethod addRequestHeaders(Map<String,String> headers, PostMethod postMethod) {
 		for(String header: headers.keySet()) {
 			postMethod.addRequestHeader(header, headers.get(header));
@@ -46,8 +46,8 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 		return postMethod;
 	}
 
-	
-	
+
+
 	@Override
 	public ApiResponse processResponse(String response, Class<? extends ApiResult> resultClass) {
         log.info(response);
