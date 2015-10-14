@@ -236,6 +236,24 @@ public class MailingElementType {
     protected Integer numSuppressedFwd;
     @XStreamAlias("NumUnsubscribes")
     protected Integer numUnsubscribes;
+    @XStreamAlias("TotalOpens")
+    protected int totalOpens;
+    @XStreamAlias("TotalClickstreams")
+    protected int totalClickstreams;
+    @XStreamAlias("TotalClicks")
+    protected int totalClicks;
+    @XStreamAlias("TotalConversions")
+    protected int totalConversions;
+    @XStreamAlias("TotalAttachments")
+    protected int totalAttachments;
+    @XStreamAlias("TotalForwards")
+    protected int totalForwards;
+    @XStreamAlias("TotalMediaPlays")
+    protected int totalMediaPlays;
+    @XStreamAlias("TotalBounces")
+    protected int totalBounces;
+    @XStreamAlias("TotalOptOuts")
+    protected int totalOptOuts;
 
     /**
      * Gets the value of the mailingId property.
@@ -1826,4 +1844,75 @@ public class MailingElementType {
         this.numUnsubscribes = value;
     }
 
+    public int getTotalOpens() {
+        return totalOpens;
+    }
+
+    public void setTotalOpens(int totalOpens) {
+        this.totalOpens = totalOpens;
+    }
+
+    public int getTotalClickstreams() {
+        return totalClickstreams;
+    }
+
+    public void setTotalClickstreams(int totalClickstreams) {
+        this.totalClickstreams = totalClickstreams;
+    }
+
+    public int getTotalClicks() {
+        return totalClicks;
+    }
+
+    public void setTotalClicks(int totalClicks) {
+        this.totalClicks = totalClicks;
+    }
+
+    public int getTotalConversions() {
+        return totalConversions;
+    }
+
+    public void setTotalConversions(int totalConversions) {
+        this.totalConversions = totalConversions;
+    }
+
+    public int getTotalAttachments() {
+        return totalAttachments;
+    }
+
+    public void setTotalAttachments(int totalAttachments) {
+        this.totalAttachments = totalAttachments;
+    }
+
+    public int getTotalForwards() {
+        return totalForwards;
+    }
+
+    public void setTotalForwards(int totalForwards) {
+        this.totalForwards = totalForwards;
+    }
+
+    public int getTotalMediaPlays() {
+        return totalMediaPlays;
+    }
+
+    public void setTotalMediaPlays(int totalMediaPlays) {
+        this.totalMediaPlays = totalMediaPlays;
+    }
+
+    public int getTotalBounces() {
+        return totalBounces;
+    }
+
+    public void setTotalBounces(int totalBounces) {
+        this.totalBounces = totalBounces;
+    }
+
+    public int getTotalOptOuts() {
+        return totalOptOuts;
+    }
+
+    public void setTotalOptOuts(int totalOptOuts) {
+        this.totalOptOuts = totalOptOuts;
+    }
 }
