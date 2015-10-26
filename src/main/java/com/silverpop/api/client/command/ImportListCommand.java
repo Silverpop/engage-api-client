@@ -15,6 +15,9 @@ public class ImportListCommand implements ApiCommand {
 	@XStreamAlias("SOURCE_FILE")
 	private String sourceFile;
 
+	@XStreamAlias("FILE_ENCODING")
+	private FileEncoding fileEncoding;
+
 	@Override
 	public Class<DataJobResult> getResultType() {
 		return DataJobResult.class;
@@ -34,5 +37,37 @@ public class ImportListCommand implements ApiCommand {
 
 	public void setSourceFile(String sourceFile) {
 		this.sourceFile = sourceFile;
+	}
+
+	public FileEncoding getFileEncoding() {
+		return fileEncoding;
+	}
+
+	public void setFileEncoding(FileEncoding fileEncoding) {
+		this.fileEncoding = fileEncoding;
+	}
+
+
+	public enum FileEncoding {
+		UTF_8("UTF-8"),
+		ISO_8859_1("ISO-8859-1");
+		private String value;
+
+		FileEncoding(String v) {
+			value = v;
+		}
+
+		public String value() {
+			return value;
+		}
+
+		public static FileEncoding fromValue(String v) {
+			for (FileEncoding c: FileEncoding.values()) {
+				if (c.value.equals(v)) {
+					return c;
+				}
+			}
+			throw new IllegalArgumentException(v);
+		}
 	}
 }
