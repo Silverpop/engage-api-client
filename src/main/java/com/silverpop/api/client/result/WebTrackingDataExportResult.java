@@ -3,20 +3,20 @@ package com.silverpop.api.client.result;
 import com.silverpop.api.client.ApiResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("RESULT")
-public class ExportTableResult implements ApiResult {
+/**
+ * Created by PeterJLyons on 10/16/2015.
+ */
+public class WebTrackingDataExportResult implements ApiResult {
 
     @XStreamAlias("SUCCESS")
-    private boolean successElement;
-
+    protected boolean success;
     @XStreamAlias("JOB_ID")
-    private long jobId;
-
+    protected long jobId;
     @XStreamAlias("FILE_PATH")
-    private String filePath;
+    protected String filePath;
 
-    public boolean isSuccessElement() {
-        return successElement;
+    public boolean isSuccess() {
+        return success;
     }
 
     public long getJobId() {
