@@ -53,5 +53,10 @@ public class RemoveRecipientCommand implements ApiCommand {
         return columns;
     }
 
+    public void setColumns(List<ColumnElementType> columns)
+    {
+        this.columns = columns;
+    }
+
 }
 

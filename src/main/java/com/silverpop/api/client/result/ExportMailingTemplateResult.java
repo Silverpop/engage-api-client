@@ -1,19 +1,18 @@
 package com.silverpop.api.client.result;
 
 import com.silverpop.api.client.ApiResult;
+import com.silverpop.api.client.XmlApiProperties;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
- * Created by PeterJLyons on 10/14/2015.
+ * Created by PeterJLyons on 10/15/2015.
  */
-@XStreamAlias("RESULT")
-public class ExportDCRulesetResult implements ApiResult {
+
+public class ExportMailingTemplateResult implements ApiResult {
 
     @XStreamAlias("SUCCESS")
     protected boolean success;
-    @XStreamAlias("JOB_ID")
-    protected Long jobid;
-    @XStreamAlias("FILE_NAME")
+    @XStreamAlias("FILE_PATH")
     protected String filename;
 
     public boolean isSuccess() {
@@ -24,19 +23,11 @@ public class ExportDCRulesetResult implements ApiResult {
         this.success = success;
     }
 
-    public Long getJobid() {
-        return jobid;
-    }
-
-    public void setJobid(Long jobid) {
-        this.jobid = jobid;
-    }
-
-    public String getFilename() {
+    public String getFilepath() {
         return filename;
     }
 
-    public void setFilename(String filename) {
+    public void setFilepath(String filename) {
         this.filename = filename;
     }
 }

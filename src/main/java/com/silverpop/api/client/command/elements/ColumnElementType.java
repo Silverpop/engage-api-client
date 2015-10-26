@@ -25,6 +25,11 @@ public class ColumnElementType {
     @XStreamAlias("SELECTION_VALUES")
     protected SelectionValuesElementType SelectionValues;
 
+    public ColumnElementType()
+    {
+        this.SelectionValues = new SelectionValuesElementType();
+    }
+
     public String getName() {
         return name;
     }

@@ -104,6 +104,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlApiProperties("Mailing")
 public class MailingElementType {
 
+
+    @XStreamAlias("JOB_ID")
+    protected long jobId;
+    @XStreamAlias("MAILING_ID")
+    protected long mailingID;
+    @XStreamAlias("FILE_PATH")
+    protected String filePath;
+    @XStreamAlias("SENT_DATE")
+    protected String dateSent;
     @XStreamAlias("MailingId")
     protected Long mailingId;
     @XStreamAlias("ReportId")
@@ -545,10 +554,7 @@ public class MailingElementType {
 
     /**
      * Gets the value of the visibility property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link PrivateShared }
+     *
      *     
      */
     public String getVisibility() {
@@ -562,10 +568,7 @@ public class MailingElementType {
 
     /**
      * Sets the value of the visibility property.
-     * 
-     * @param privateShared
-     *     allowed object is
-     *     {@link PrivateShared }
+     *
      *     
      */
     public void setVisibility(String privateShared) {
@@ -1914,5 +1917,37 @@ public class MailingElementType {
 
     public void setTotalOptOuts(int totalOptOuts) {
         this.totalOptOuts = totalOptOuts;
+    }
+
+    public long getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(long jobId) {
+        this.jobId = jobId;
+    }
+
+    public long getMailingID() {
+        return mailingID;
+    }
+
+    public void setMailingID(long mailingID) {
+        this.mailingID = mailingID;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public String getDateSent() {
+        return dateSent;
+    }
+
+    public void setDateSent(String dateSent) {
+        this.dateSent = dateSent;
     }
 }
