@@ -8,7 +8,6 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import com.silverpop.api.client.xmlapi.NoResponseApiErrorResult;
 
 public abstract class ApiClient<REQUEST extends ApiRequest> {
@@ -61,8 +60,9 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 
 		REQUEST request = commandProcessor.prepareRequest(command);
         addAdditionalHeadersToRequest(request, requestHeaders);
+        addAdditionalHeadersToRequest(request, getSession().getDefaultHeaders());
 
-		HttpMethodBase method = commandProcessor.prepareMethod(getSession().getUrl(), request);
+        HttpMethodBase method = commandProcessor.prepareMethod(getSession().getUrl(), request);
 		String in = executeMethod(method);
 
 		ApiResponse response = commandProcessor.processResponse(in, request.getResultType());
