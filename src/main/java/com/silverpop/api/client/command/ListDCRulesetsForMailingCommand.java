@@ -6,7 +6,7 @@ import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.result.ListDCRulesetsForMailingResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XmlApiProperties("ListDCRulesetsForMailingCommand")
+@XmlApiProperties("ListDCRulesetsForMailing")
 public class ListDCRulesetsForMailingCommand implements ApiCommand {
 
     @XStreamAlias("MAILING_ID")
