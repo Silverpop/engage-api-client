@@ -21,6 +21,11 @@ public class InsertUpdateRelationalTableCommand implements ApiCommand {
     @XStreamAlias("ROWS")
     protected RowsElementType rows;
 
+    public InsertUpdateRelationalTableCommand()
+    {
+        this.rows = new RowsElementType();
+    }
+
     @Override
     public Class<InsertUpdateRelationalTableResult> getResultType() {
         return InsertUpdateRelationalTableResult.class;
