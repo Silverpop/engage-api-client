@@ -7,7 +7,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 @XStreamAlias("RESULT")
 public class ValidateDCRulesetResult implements ApiResult {
 
-    @XStreamAlias("success")
+    @XStreamAlias("SUCCESS")
     private boolean success;
 
     @XStreamAlias("MAILING_ID")
