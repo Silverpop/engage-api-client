@@ -2,8 +2,8 @@ package com.silverpop.api.client.command;
 
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.ApiCommand;
-import com.silverpop.api.client.result.DataJobResult;
 
+import com.silverpop.api.client.result.ImportListResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XmlApiProperties("ImportList")
@@ -19,8 +19,8 @@ public class ImportListCommand implements ApiCommand {
 	private FileEncoding fileEncoding;
 
 	@Override
-	public Class<DataJobResult> getResultType() {
-		return DataJobResult.class;
+	public Class<ImportListResult> getResultType() {
+		return ImportListResult.class;
 	}
 
 	public String getMapFile() {
