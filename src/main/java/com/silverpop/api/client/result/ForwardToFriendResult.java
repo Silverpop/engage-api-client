@@ -3,6 +3,7 @@ package com.silverpop.api.client.result;
 import com.silverpop.api.client.ApiResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+@XStreamAlias("FTF_RESULT")
 public class ForwardToFriendResult implements ApiResult {
 
     @XStreamAlias("SUCCESS")
