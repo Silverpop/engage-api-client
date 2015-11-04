@@ -33,11 +33,10 @@ public class XmlApiRequestTest {
 	@BeforeMethod
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
-
-        apiCommand = new XmlApiCommandImpl();
-        xStreamFactory = new XStreamFactory(apiCommand.getResultType());
+		xStreamFactory = new XStreamFactory();
 		annotationUtility = new ApiAnnotationUtility<XmlApiProperties>(XmlApiProperties.class);
-
+		apiCommand = new XmlApiCommandImpl();
+		
 		request = new com.silverpop.api.client.xmlapi.XmlApiRequest(apiCommand, xStreamFactory, annotationUtility);
 	}
 	

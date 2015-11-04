@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.silverpop.api.client.ApiErrorResult;
 import com.silverpop.api.client.ApiException;
 import com.silverpop.api.client.ApiResultException;
+import com.silverpop.api.client.ApiSession;
 import com.silverpop.api.client.command.LoginCommand;
 import com.silverpop.api.client.command.LogoutCommand;
 import com.silverpop.api.client.result.LoginResult;
@@ -39,7 +40,7 @@ public class XmlApiSessionTest {
 		when(loginResult.getSessionId()).thenReturn(SESSION_ID);
 		when(loginResult.getSessionEncoding()).thenReturn(SESSION_ENCODING);
 		when(loginResult.getOrganizationId()).thenReturn(ORGANIZATION_ID);
-        when(clientFactory.createClient(BASE_URL)).thenReturn(loginClient);
+        when(clientFactory.createClient(any(ApiSession.class))).thenReturn(loginClient);
         when(logoutClient.executeCommand(any(LogoutCommand.class))).thenReturn(new LogoutResult());
 	}
 	

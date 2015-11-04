@@ -1,11 +1,13 @@
 package com.silverpop.api.client.result;
 
-import com.silverpop.api.client.ApiResult;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+/**
+ * @deprecated Use {@link com.silverpop.api.client.authentication.oauth.OauthResult} instead.
+ */
+@Deprecated
 @XStreamAlias("RESULT")
-public class LoginResult implements ApiResult {
+public class LoginResult implements com.silverpop.api.client.authentication.LoginResult {
 	
 	@XStreamAlias("SESSIONID")
 	private String sessionId;
