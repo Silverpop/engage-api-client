@@ -7,6 +7,7 @@ import com.silverpop.api.client.result.RecipientResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -80,6 +81,11 @@ public class OptOutRecipientCommand implements ApiCommand {
     }
 
     public List<ColumnElementType> getColumns() {
+        if(this.columns == null)
+        {
+            this.columns = new ArrayList<ColumnElementType>();
+        }
+
         return columns;
     }
 

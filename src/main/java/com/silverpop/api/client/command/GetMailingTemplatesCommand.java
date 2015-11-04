@@ -2,12 +2,14 @@ package com.silverpop.api.client.command;
 
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.ApiResult;
+import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.result.GetMailingTemplatesResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
  * Created by PeterJLyons on 10/12/2015.
  */
+@XmlApiProperties("GetMailingTemplates")
 public class GetMailingTemplatesCommand implements ApiCommand {
 
     @XStreamAlias("VISIBILITY")

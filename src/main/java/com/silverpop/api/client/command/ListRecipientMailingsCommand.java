@@ -11,29 +11,29 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class ListRecipientMailingsCommand implements ApiCommand {
 
     @XStreamAlias("LIST_ID")
-    private long tableId;
+    private long listId;
 
     @XStreamAlias("RECIPIENT_ID")
-    private long rows;
+    private long recipientId;
 
     @Override
     public Class<? extends ApiResult> getResultType() {
         return ListRecipientMailingsResult.class;
     }
 
-    public long getRows() {
-        return rows;
+    public long getListId() {
+        return listId;
     }
 
-    public void setRows(long rows) {
-        this.rows = rows;
+    public void setListId(long listId) {
+        this.listId = listId;
     }
 
-    public long getTableId() {
-        return tableId;
+    public long getRecipientId() {
+        return recipientId;
     }
 
-    public void setTableId(long tableId) {
-        this.tableId = tableId;
+    public void setRecipientId(long recipientId) {
+        this.recipientId = recipientId;
     }
 }

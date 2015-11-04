@@ -1,6 +1,7 @@
 package com.silverpop.api.client.command;
 
 import com.silverpop.api.client.ApiCommand;
+import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.command.elements.MapFieldElementType;
 import com.silverpop.api.client.result.JoinTableResult;
 import com.silverpop.api.client.result.LoginResult;
@@ -13,6 +14,7 @@ import java.util.List;
 /**
  * Created by PeterJLyons on 10/12/2015.
  */
+@XmlApiProperties("JoinTable")
 public class JoinTableCommand implements ApiCommand {
 
     @XStreamAlias("TABLE_NAME")
