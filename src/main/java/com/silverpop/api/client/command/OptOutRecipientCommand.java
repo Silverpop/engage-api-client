@@ -3,6 +3,7 @@ package com.silverpop.api.client.command;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.command.elements.ColumnElementType;
+import com.silverpop.api.client.result.OptOutRecipientResult;
 import com.silverpop.api.client.result.RecipientResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
@@ -36,8 +37,8 @@ public class OptOutRecipientCommand implements ApiCommand {
     List<ColumnElementType> columns;
 
     @Override
-    public Class<RecipientResult> getResultType() {
-        return RecipientResult.class;
+    public Class<OptOutRecipientResult> getResultType() {
+        return OptOutRecipientResult.class;
     }
 
     public long getListId() {
