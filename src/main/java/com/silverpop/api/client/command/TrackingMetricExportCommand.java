@@ -2,6 +2,7 @@ package com.silverpop.api.client.command;
 
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.ApiResult;
+import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.command.elements.MetricsExportFormat;
 import com.silverpop.api.client.result.TrackingMetricExportResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -9,6 +10,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 /**
  * Created by PeterJLyons on 10/15/2015.
  */
+@XmlApiProperties("TrackingMetricExport")
 public class TrackingMetricExportCommand implements ApiCommand {
 
     @XStreamAlias("MAILING_ID")
