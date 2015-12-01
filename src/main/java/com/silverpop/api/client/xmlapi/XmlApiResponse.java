@@ -39,7 +39,10 @@ public class XmlApiResponse implements ApiResponse {
 	
 	@Override
 	public boolean isSuccessful() {
-        return responseText.contains("<SUCCESS>true</SUCCESS>") || responseText.contains("<SUCCESS>TRUE</SUCCESS>" );
+        return responseText.contains("<SUCCESS>true</SUCCESS>") || responseText.contains("<SUCCESS>TRUE</SUCCESS>") || responseText.contains("<SUCCESS>SUCCESS</SUCCESS>");
+			//<SUCCESS>SUCCESS</SUCCESS> is for OptOutRecipient returning success instead of true or false.
+
+
 //        return responseText.contains("<SUCCESS>true</SUCCESS>");
 	}
 

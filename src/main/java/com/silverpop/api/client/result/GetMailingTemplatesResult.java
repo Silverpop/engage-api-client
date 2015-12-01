@@ -14,6 +14,9 @@ import java.util.List;
 @XStreamAlias("RESULT")
 public class GetMailingTemplatesResult implements ApiResult {
 
+    @XStreamAlias("SUCCESS")
+    protected boolean success;
+
     @XStreamImplicit(itemFieldName = "MAILING_TEMPLATE")
     protected List<MailingTemplateElementType> mailingtemplates;
 
@@ -24,5 +27,10 @@ public class GetMailingTemplatesResult implements ApiResult {
         }
 
         return mailingtemplates;
+    }
+
+    public boolean isSUCCESS()
+    {
+        return success;
     }
 }

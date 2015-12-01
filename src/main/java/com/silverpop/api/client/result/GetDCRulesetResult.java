@@ -22,4 +22,9 @@ public class GetDCRulesetResult implements ApiResult {
         }
         return this.rulesets;
     }
+
+    public boolean getSUCCESS()
+    {
+        return success;
+    }
 }
