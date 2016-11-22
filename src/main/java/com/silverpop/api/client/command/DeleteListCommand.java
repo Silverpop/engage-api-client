@@ -25,7 +25,7 @@ public class DeleteListCommand implements ApiCommand {
     @XStreamAlias("KEEP_DETAILS")
     private boolean keepListDetails;
 
-    @XStreamAlias("recursive")
+    @XStreamAlias("RECURSIVE")
     private boolean isRecursive;
 
 
