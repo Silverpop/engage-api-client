@@ -14,9 +14,9 @@ public class Column {
     private String value;
 
     public Column() {
-    	
+
     }
-    
+
     public Column(String name, String value) {
         this.name = name;
         this.value = value;
