@@ -1,2 +1,5 @@
 target/
 /bin
+*.DS_Store
+*rebel.xml
+*.iml

@@ -1,13 +1,15 @@
 package com.silverpop.api.client.command;
 
-import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.result.LoginResult;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+/**
+ * @deprecated Use {@link com.silverpop.api.client.authentication.oauth.OauthCommand} instead.
+ */
+@Deprecated
 @XmlApiProperties("Login")
-public class LoginCommand implements ApiCommand {
+public class LoginCommand implements com.silverpop.api.client.authentication.LoginCommand {
 
 	@XStreamAlias("USERNAME")
 	private String username;
@@ -16,7 +18,7 @@ public class LoginCommand implements ApiCommand {
 	private String password;
 
 	public LoginCommand() {}
-	
+
 	public LoginCommand(String username, String password) {
 		this.username = username;
 		this.password = password;
@@ -31,7 +33,7 @@ public class LoginCommand implements ApiCommand {
 		return username;
 	}
 
-	public String getPassword() {
+    public String getPassword() {
 		return password;
 	}
 }
