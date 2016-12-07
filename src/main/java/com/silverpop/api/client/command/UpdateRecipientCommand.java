@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.XmlApiProperties;
-import com.silverpop.api.client.command.elements.Column;
+import com.silverpop.api.client.command.elements.ColumnElementType;
 import com.silverpop.api.client.result.RecipientResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
@@ -35,11 +35,11 @@ public class UpdateRecipientCommand implements ApiCommand {
     private String visitorKey;
 
     @XStreamImplicit(itemFieldName="COLUMN")
-    private List<Column> columns;
+    private List<ColumnElementType> columns;
 
 
-    public UpdateRecipientCommand() {
-        columns = new ArrayList<Column>();
+    public UpdateRecipientCommand () {
+        columns = new ArrayList<ColumnElementType>();
     }
 
     @Override
@@ -103,15 +103,15 @@ public class UpdateRecipientCommand implements ApiCommand {
         this.visitorKey = visitorKey;
     }
 
-    public void setColumns(List<Column> columns) {
+    public void setColumns(List<ColumnElementType> columns) {
         this.columns = columns;
     }
 
-    public List<Column> getColumns() {
+    public List<ColumnElementType> getColumns() {
         return columns;
     }
 
-    public void addColumn(final Column column) {
+    public void addColumn(final ColumnElementType column) {
         this.columns.add(column);
     }
 }

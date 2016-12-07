@@ -1,5 +1,6 @@
 package com.silverpop.api.client.result.elements;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -12,6 +13,9 @@ public class GetJobStatusParameters {
     public List<GetJobStatusParameter> parameters;
 
     public List<GetJobStatusParameter> getParameters() {
-        return parameters;
+        if (parameters == null) {
+            parameters = new ArrayList<GetJobStatusParameter>();
+        }
+        return this.parameters;
     }
 }
