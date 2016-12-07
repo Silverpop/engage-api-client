@@ -12,12 +12,19 @@ public class RecipientResult implements ApiResult {
 	@XStreamAlias("SUCCESS")
 	private boolean success;
 
+	@XStreamAlias("ORGANIZATION_ID")
+	private String organizationId;
+
 	public String getRecipientId() {
 		return recipientId;
 	}
 
 	public boolean getSuccess() {
 		return success;
+	}
+
+	public String getOrganizationId() {
+		return organizationId;
 	}
 
 }

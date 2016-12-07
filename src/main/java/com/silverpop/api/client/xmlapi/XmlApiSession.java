@@ -61,6 +61,15 @@ public class XmlApiSession implements ApiSession {
         clearState();
 	}
 
+
+  public XmlApiSession(String url, String sessionId)
+ {
+   this.url = url;
+   this.sessionId = sessionId;
+   open = true;
+ }
+
+
 	private void clearState() {
 		sessionId = "";
 		organizationId = "";
