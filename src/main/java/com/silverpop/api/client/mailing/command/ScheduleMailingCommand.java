@@ -1,5 +1,6 @@
 package com.silverpop.api.client.mailing.command;
 
+import com.silverpop.api.client.command.elements.SendTimeOptimization;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.silverpop.api.client.ApiResult;
@@ -65,6 +66,11 @@ public class ScheduleMailingCommand implements ApiCommand {
 	@XStreamAlias("INBOX_MONITOR")
     private Boolean useMonitoring;
 
+	@XStreamAlias("SEND_TIME_OPTIMIZATION")
+	protected SendTimeOptimization sendtimeoptimization;
+	@XStreamAlias("WA_MAILINGLEVEL_CODE")
+	protected String wamailinglevelcode;
+
 	@XStreamAlias("SUBSTITUTIONS")
 	private List<ScheduleMailingSubstitution> substitutions;
 	
@@ -73,6 +79,12 @@ public class ScheduleMailingCommand implements ApiCommand {
 
     @XStreamAlias("PUBLISH_TO_SOCIALS")
     private List<AuthorizedSocialNetwork> authorizedSocialNetworks;
+
+	@XStreamAlias("SUPPRESSION_LIST_ID")
+	private String suppressionListId;
+
+	@XStreamAlias("CUSTOM_OPT_OUT")
+	private String customOptOut;
 	
 	@Override
 	public Class<? extends ApiResult> getResultType() {
@@ -277,4 +289,36 @@ public class ScheduleMailingCommand implements ApiCommand {
     public void setAuthorizedSocialNetworks(List<AuthorizedSocialNetwork> authorizedSocialNetworks){
          this.authorizedSocialNetworks = authorizedSocialNetworks;
     }
+
+	public String getWamailinglevelcode() {
+		return wamailinglevelcode;
+	}
+
+	public void setWamailinglevelcode(String wamailinglevelcode) {
+		this.wamailinglevelcode = wamailinglevelcode;
+	}
+
+	public SendTimeOptimization getSendtimeoptimization() {
+		return sendtimeoptimization;
+	}
+
+	public void setSendtimeoptimization(SendTimeOptimization sendtimeoptimization) {
+		this.sendtimeoptimization = sendtimeoptimization;
+	}
+
+	public String getSuppressionListId() {
+		return suppressionListId;
+	}
+
+	public void setSuppressionListId(String suppressionListId) {
+		this.suppressionListId = suppressionListId;
+	}
+
+	public String getCustomOptOut() {
+		return customOptOut;
+	}
+
+	public void setCustomOptOut(String customOptOut) {
+		this.customOptOut = customOptOut;
+	}
 }

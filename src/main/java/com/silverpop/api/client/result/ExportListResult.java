@@ -10,7 +10,7 @@ public class ExportListResult implements ApiResult {
     private boolean successElement;
     
     @XStreamAlias("JOB_ID")
-    private String jobId;
+    private long jobId;
     
     @XStreamAlias("FILE_PATH")
     private String filePath;
@@ -19,7 +19,7 @@ public class ExportListResult implements ApiResult {
 		return successElement;
 	}
 
-	public String getJobId() {
+	public long getJobId() {
 		return jobId;
 	}
 
