@@ -21,15 +21,15 @@
   </build>
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>silverpop</groupId>
+  <groupId>com.silverpop</groupId>
   <artifactId>spapi-client</artifactId>
   <packaging>jar</packaging>
-  <version>1.0</version>
+  <version>1.2-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
       <artifactId>xstream</artifactId>
-      <version>1.4.4</version>
+      <version>1.4.8</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -38,6 +38,13 @@
       <version>3.1</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.1</version>
+      <scope>compile</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
