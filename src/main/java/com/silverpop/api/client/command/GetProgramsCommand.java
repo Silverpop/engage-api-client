@@ -33,6 +33,16 @@ public class GetProgramsCommand implements ApiCommand {
 	public Class<GetProgramsResult> getResultType() {
 		return GetProgramsResult.class;
 	}
+
+	public GetProgramsCommand(boolean includeActive, boolean includeInactive) {
+		super();
+		this.includeActive=includeActive;
+		this.includeInactive=includeInactive;
+	}
+
+	public GetProgramsCommand() {
+		super();
+	}
 	
 	public void setIncludeActive(Boolean includeActive) {
 		this.includeActive = includeActive;

@@ -52,6 +52,8 @@ public class GetListMetaDataResult implements ApiResult {
     protected SelectionValuesElementType selectionvalues;
     @XStreamAlias("KEY_COLUMNS")
     protected ColumnsElementType keycolumns;
+    @XStreamAlias("PARENT_DATABASE_ID")
+    protected String parentDatabaseId;
 
     public ColumnsElementType getKeycolumns() {
         return keycolumns;
@@ -219,5 +221,10 @@ public class GetListMetaDataResult implements ApiResult {
 
     public void setSelectionvalues(SelectionValuesElementType selectionvalues) {
         this.selectionvalues = selectionvalues;
+    }
+
+    public Long getParentDatabaseId() {
+        if  (parentDatabaseId == null || parentDatabaseId.length() == 0) return 0L;
+        return Long.parseLong(parentDatabaseId);
     }
 }

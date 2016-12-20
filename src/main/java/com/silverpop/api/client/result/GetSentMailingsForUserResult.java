@@ -16,7 +16,7 @@ public class GetSentMailingsForUserResult implements ApiResult {
 	@XStreamAlias("SUCCESS")
 	private boolean success;
 
-    @XStreamImplicit(itemFieldName="MAILING")
+    @XStreamImplicit(itemFieldName="Mailing")
     private List<MailingElementType> mailings;
 
 
