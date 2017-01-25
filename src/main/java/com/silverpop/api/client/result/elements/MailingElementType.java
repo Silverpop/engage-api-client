@@ -558,7 +558,7 @@ public class MailingElementType {
      *     
      */
     public String getVisibility() {
-        if(visibility == "Shared")
+    	if ("Shared".equals(visibility))
         {
             return "1";
         } else {
