@@ -8,6 +8,8 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import com.silverpop.api.client.authentication.LogoutCommand;
 import com.silverpop.api.client.xmlapi.NoResponseApiErrorResult;
 
 public abstract class ApiClient<REQUEST extends ApiRequest> {
@@ -52,7 +54,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
     }
 
 	private boolean retryCommand(ApiErrorResult errorResult) {
-		return errorResult.isSessionLost() && getSession().isReAuthenticate();
+        return errorResult.isSessionLost() && getSession().isReAuthenticate() && !(apiCommand instanceof LogoutCommand);
 	}
 
 	private ApiResult validateSessionAndExecuteCommand(ApiCommand command, Map<String,String> requestHeaders) throws ApiResultException {

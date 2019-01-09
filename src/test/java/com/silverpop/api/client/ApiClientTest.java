@@ -93,4 +93,62 @@ public class ApiClientTest {
 		}
 	}
 
+    @Test
+    public void testExecuteCommandWithRetry() throws HttpException, IOException {
+        when(session.isOpen()).thenReturn(OPEN);
+        when(commandProcessor.prepareRequest(apiCommand)).thenReturn(apiRequest);
+        when(commandProcessor.prepareMethod(URL, apiRequest)).thenReturn(httpMethodBase);
+        when(httpClient.executeMethod(httpMethodBase)).then(new Answer<Integer>() {
+            @Override
+            public Integer answer(InvocationOnMock invocation) throws Throwable {
+                when(httpMethodBase.getResponseBodyAsString()).thenReturn(RESPONSE_BODY);
+                return null;
+            }
+        });
+        doReturn(API_RESULT_TYPE).when(apiRequest).getResultType();
+        when(commandProcessor.processResponse(RESPONSE_BODY, API_RESULT_TYPE)).thenReturn(apiResponse);
+        when(apiResponse.isSuccessful()).thenReturn(!SUCCESSFUL);
+        when(apiResponse.buildErrorResult()).thenReturn(apiErrorResult);
+        when(apiErrorResult.isSessionLost()).thenReturn(true);
+        when(session.isReAuthenticate()).thenReturn(true);
+
+        try {
+            apiClient.executeCommand(apiCommand);
+            fail("Expected ApiResultException");
+        } catch (com.silverpop.api.client.ApiResultException e) {
+            assertEquals(e.getErrorResult(), apiErrorResult);
+            assertEquals(e.getMessage(), "API call '" + apiCommand.getClass().getName() + "' unsuccessful.");
+            verify(session, atLeastOnce()).close();
+        }
+    }
+
+    @Test
+    public void testExecuteLogoutCommandShouldNotRetry() throws HttpException, IOException {
+        when(session.isOpen()).thenReturn(OPEN);
+        when(commandProcessor.prepareRequest(logoutCommand)).thenReturn(apiRequest);
+        when(commandProcessor.prepareMethod(URL, apiRequest)).thenReturn(httpMethodBase);
+        when(httpClient.executeMethod(httpMethodBase)).then(new Answer<Integer>() {
+            @Override
+            public Integer answer(InvocationOnMock invocation) throws Throwable {
+                when(httpMethodBase.getResponseBodyAsString()).thenReturn(RESPONSE_BODY);
+                return null;
+            }
+        });
+        doReturn(API_RESULT_TYPE).when(apiRequest).getResultType();
+        when(commandProcessor.processResponse(RESPONSE_BODY, API_RESULT_TYPE)).thenReturn(apiResponse);
+        when(apiResponse.isSuccessful()).thenReturn(!SUCCESSFUL);
+        when(apiResponse.buildErrorResult()).thenReturn(apiErrorResult);
+        when(apiErrorResult.isSessionLost()).thenReturn(true);
+        when(session.isReAuthenticate()).thenReturn(true);
+
+        try {
+            apiClient.executeCommand(logoutCommand);
+            fail("Expected ApiResultException");
+        } catch (com.silverpop.api.client.ApiResultException e) {
+            assertEquals(e.getErrorResult(), apiErrorResult);
+            assertEquals(e.getMessage(), "API call '" + logoutCommand.getClass().getName() + "' unsuccessful.");
+            verify(session, never()).close();
+        }
+    }
+
 }
