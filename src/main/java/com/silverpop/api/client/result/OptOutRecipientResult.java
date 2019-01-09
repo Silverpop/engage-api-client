@@ -22,8 +22,7 @@ public class OptOutRecipientResult implements ApiResult {
     public boolean isSuccessful() {
         // For some reason, the server side returns a success element of "SUCCESS" instead of true or false.
         // This is a hardcoded workaround that I recommend should be fixed by someone later.
-
-        // you should use the String.equals.. instead of an == on a String
+        
         return "SUCCESS".equalsIgnoreCase(this.success);
     }
 
