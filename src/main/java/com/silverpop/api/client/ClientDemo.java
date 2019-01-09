@@ -1,9 +1,9 @@
 package com.silverpop.api.client;
 
 
+import com.silverpop.api.client.authentication.LogoutCommand;
 import com.silverpop.api.client.command.GetListsCommand;
 import com.silverpop.api.client.result.GetListsResult;
-import com.silverpop.api.client.result.elements.GetListsList;
 import com.silverpop.api.client.result.elements.ListElementType;
 import com.silverpop.api.client.xmlapi.XmlApiClient;
 
@@ -25,5 +25,6 @@ public class ClientDemo {
         for (ListElementType list : lists) {
             System.out.println(list.getNAME());
         }
+        apiClient.executeCommand(new LogoutCommand());
     }
 }

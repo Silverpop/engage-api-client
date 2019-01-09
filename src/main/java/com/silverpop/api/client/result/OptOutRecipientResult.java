@@ -22,13 +22,8 @@ public class OptOutRecipientResult implements ApiResult {
     public boolean isSuccessful() {
         // For some reason, the server side returns a success element of "SUCCESS" instead of true or false.
         // This is a hardcoded workaround that I recommend should be fixed by someone later.
-
-        if (success == "SUCCESS")
-        {
-            return true;
-        } else {
-            return false;
-        }
+        
+        return "SUCCESS".equalsIgnoreCase(this.success);
     }
 
     public String getOrganizationId() {
