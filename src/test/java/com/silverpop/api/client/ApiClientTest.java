@@ -1,7 +1,6 @@
 package com.silverpop.api.client;
 
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
@@ -17,6 +16,7 @@ import org.mockito.stubbing.Answer;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.silverpop.api.client.authentication.LogoutCommand;
 
 public class ApiClientTest {
 
@@ -30,6 +30,7 @@ public class ApiClientTest {
 	@Mock private HttpClient httpClient;
 	@Mock private ApiSession session;
 	@Mock private ApiCommand apiCommand;
+	@Mock private LogoutCommand logoutCommand;
 	@Mock private ApiRequest apiRequest;
 	@Mock private HttpMethodBase httpMethodBase;
 	@Mock private ApiResponse apiResponse;
