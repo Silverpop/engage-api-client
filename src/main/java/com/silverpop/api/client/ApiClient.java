@@ -44,7 +44,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
         try {
             return validateSessionAndExecuteCommand(command, requestHeaders);
         } catch(ApiResultException e) {
-            if(retryCommand(e.getErrorResult())) {
+			if(retryCommand(e.getErrorResult(), command)) {
                 getSession().close();
                 return validateSessionAndExecuteCommand(command, requestHeaders);
             } else {
@@ -53,7 +53,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
         }
     }
 
-	private boolean retryCommand(ApiErrorResult errorResult) {
+	private boolean retryCommand(ApiErrorResult errorResult, ApiCommand apiCommand) {
         return errorResult.isSessionLost() && getSession().isReAuthenticate() && !(apiCommand instanceof LogoutCommand);
 	}
 
