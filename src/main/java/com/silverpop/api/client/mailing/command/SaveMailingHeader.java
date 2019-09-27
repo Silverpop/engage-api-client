@@ -5,7 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 //<Subject>Subject of a Mailing</Subject><TrackingLevel>4</TrackingLevel><Encoding>6</Encoding><ListID>1924132</ListID> <EditorType>1</EditorType></Header>
 public class SaveMailingHeader {
 
-	@XStreamAlias("MailingId")
+	@XStreamAlias("MailingID")
 	private Long mailingId;
 
 	@XStreamAlias("MailingName")
