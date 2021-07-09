@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 /**
@@ -59,6 +60,15 @@ public class ExpressionElementType {
     protected String leftparens;
     @XStreamImplicit(itemFieldName = "RT_EXPRESSION")
     protected List<RTExpressionElementType> rtexpressions;
+
+
+    @XStreamAlias("COLUMN")
+    protected String column;
+    @XStreamAlias("OPERATOR")
+    protected String operator;
+    @XStreamAsAttribute
+    @XStreamAlias("criteria_type")
+    protected String criteriaType;
 
     /**
      * Gets the value of the andor property.
@@ -218,6 +228,30 @@ public class ExpressionElementType {
      */
     public void setLEFTPARENS(String value) {
         this.leftparens = value;
+    }
+
+    public String getColumn() {
+        return column;
+    }
+
+    public void setColumn(String column) {
+        this.column = column;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
+
+    public String getCriteriaType() {
+        return criteriaType;
+    }
+
+    public void setCriteriaType(String criteriaType) {
+        this.criteriaType = criteriaType;
     }
 
     /**

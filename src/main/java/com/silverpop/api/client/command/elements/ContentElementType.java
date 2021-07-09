@@ -31,6 +31,7 @@ public class ContentElementType {
 
     protected String value;
     @XStreamAsAttribute
+    @XStreamAlias("content_area")
     protected String contentArea;
     @XStreamAsAttribute
     protected String name;
