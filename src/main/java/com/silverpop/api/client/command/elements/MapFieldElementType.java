@@ -5,22 +5,15 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for MapFieldElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="MapFieldElementType">
  *   &lt;complexContent>
@@ -33,8 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XStreamAlias("MAP_FIELD")
 public class MapFieldElementType {
@@ -46,11 +37,9 @@ public class MapFieldElementType {
 
     /**
      * Gets the value of the listfield property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLISTFIELD() {
         return listfield;
@@ -58,11 +47,9 @@ public class MapFieldElementType {
 
     /**
      * Sets the value of the listfield property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLISTFIELD(String value) {
         this.listfield = value;
@@ -70,11 +57,9 @@ public class MapFieldElementType {
 
     /**
      * Gets the value of the tablefield property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTABLEFIELD() {
         return tablefield;
@@ -82,11 +67,9 @@ public class MapFieldElementType {
 
     /**
      * Sets the value of the tablefield property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTABLEFIELD(String value) {
         this.tablefield = value;

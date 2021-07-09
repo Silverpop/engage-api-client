@@ -5,13 +5,11 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
-
 
 /**
  * <p>Java class for SendTimeOptimization.
@@ -27,7 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
- *
  */
 @XmlType(name = "SendTimeOptimization")
 @XmlEnum
@@ -48,7 +45,7 @@ public enum SendTimeOptimization {
     }
 
     public static SendTimeOptimization fromValue(String v) {
-        for (SendTimeOptimization c: SendTimeOptimization.values()) {
+        for (SendTimeOptimization c : SendTimeOptimization.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

@@ -5,7 +5,6 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,12 +12,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
  * <p>Java class for BehaviorElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="BehaviorElementType">
  *   &lt;complexContent>
@@ -37,19 +35,17 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BehaviorElementType", propOrder = {
-    "optionoperator",
-    "typeoperator",
-    "mailingid",
-    "reportid",
-    "linkname",
-    "whereoperator",
-    "criteriaoperator",
-    "values"
+        "optionoperator",
+        "typeoperator",
+        "mailingid",
+        "reportid",
+        "linkname",
+        "whereoperator",
+        "criteriaoperator",
+        "values"
 })
 public class BehaviorElementType {
 
@@ -72,7 +68,6 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the optionoperator property.
-     * 
      */
     public int getOPTIONOPERATOR() {
         return optionoperator;
@@ -80,7 +75,6 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the optionoperator property.
-     * 
      */
     public void setOPTIONOPERATOR(int value) {
         this.optionoperator = value;
@@ -88,7 +82,6 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the typeoperator property.
-     * 
      */
     public int getTYPEOPERATOR() {
         return typeoperator;
@@ -96,7 +89,6 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the typeoperator property.
-     * 
      */
     public void setTYPEOPERATOR(int value) {
         this.typeoperator = value;
@@ -104,11 +96,9 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the mailingid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getMAILINGID() {
         return mailingid;
@@ -116,11 +106,9 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the mailingid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setMAILINGID(Long value) {
         this.mailingid = value;
@@ -128,11 +116,9 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the reportid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getREPORTID() {
         return reportid;
@@ -140,11 +126,9 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the reportid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setREPORTID(Long value) {
         this.reportid = value;
@@ -152,11 +136,9 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the linkname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLINKNAME() {
         return linkname;
@@ -164,11 +146,9 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the linkname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLINKNAME(String value) {
         this.linkname = value;
@@ -176,11 +156,9 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the whereoperator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is
+     * {@link Integer }
      */
     public Integer getWHEREOPERATOR() {
         return whereoperator;
@@ -188,11 +166,9 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the whereoperator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Integer }
      */
     public void setWHEREOPERATOR(Integer value) {
         this.whereoperator = value;
@@ -200,11 +176,9 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the criteriaoperator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCRITERIAOPERATOR() {
         return criteriaoperator;
@@ -212,11 +186,9 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the criteriaoperator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCRITERIAOPERATOR(String value) {
         this.criteriaoperator = value;
@@ -224,11 +196,9 @@ public class BehaviorElementType {
 
     /**
      * Gets the value of the values property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getVALUES() {
         return values;
@@ -236,11 +206,9 @@ public class BehaviorElementType {
 
     /**
      * Sets the value of the values property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setVALUES(String value) {
         this.values = value;

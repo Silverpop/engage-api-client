@@ -5,23 +5,16 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import com.silverpop.api.client.XmlApiProperties;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for TrackingMetricMailingElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="TrackingMetricMailingElementType">
  *   &lt;complexContent>
@@ -36,8 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlApiProperties("MAILING")
 public class TrackingMetricMailingElementType {
@@ -53,11 +44,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Gets the value of the jobid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getJOBID() {
         return jobid;
@@ -65,11 +54,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Sets the value of the jobid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setJOBID(Long value) {
         this.jobid = value;
@@ -77,11 +64,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Gets the value of the mailingid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getMAILINGID() {
         return mailingid;
@@ -89,11 +74,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Sets the value of the mailingid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setMAILINGID(Long value) {
         this.mailingid = value;
@@ -101,11 +84,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Gets the value of the filepath property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFILEPATH() {
         return filepath;
@@ -113,11 +94,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Sets the value of the filepath property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFILEPATH(String value) {
         this.filepath = value;
@@ -125,11 +104,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Gets the value of the sentdate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSENTDATE() {
         return sentdate;
@@ -137,11 +114,9 @@ public class TrackingMetricMailingElementType {
 
     /**
      * Sets the value of the sentdate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSENTDATE(String value) {
         this.sentdate = value;

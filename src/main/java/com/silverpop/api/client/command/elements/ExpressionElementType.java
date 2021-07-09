@@ -5,25 +5,19 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for ExpressionElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="ExpressionElementType">
  *   &lt;complexContent>
@@ -43,8 +37,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XStreamAlias("EXPRESSION")
 public class ExpressionElementType {
@@ -70,11 +62,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the andor property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getANDOR() {
         return andor;
@@ -82,11 +72,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the andor property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setANDOR(String value) {
         this.andor = value;
@@ -94,11 +82,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the type property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTYPE() {
         return type;
@@ -106,11 +92,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the type property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTYPE(String value) {
         this.type = value;
@@ -118,11 +102,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the columnname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCOLUMNNAME() {
         return columnname;
@@ -130,11 +112,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the columnname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCOLUMNNAME(String value) {
         this.columnname = value;
@@ -142,11 +122,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the operators property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getOPERATORS() {
         return operators;
@@ -154,11 +132,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the operators property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setOPERATORS(String value) {
         this.operators = value;
@@ -166,11 +142,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the values property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getVALUES() {
         return values;
@@ -178,11 +152,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the values property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setVALUES(String value) {
         this.values = value;
@@ -190,11 +162,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the tableid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getTABLEID() {
         return tableid;
@@ -202,11 +172,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the tableid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setTABLEID(Long value) {
         this.tableid = value;
@@ -214,11 +182,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the rightparens property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRIGHTPARENS() {
         return rightparens;
@@ -226,11 +192,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the rightparens property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRIGHTPARENS(String value) {
         this.rightparens = value;
@@ -238,11 +202,9 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the leftparens property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLEFTPARENS() {
         return leftparens;
@@ -250,11 +212,9 @@ public class ExpressionElementType {
 
     /**
      * Sets the value of the leftparens property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLEFTPARENS(String value) {
         this.leftparens = value;
@@ -262,25 +222,23 @@ public class ExpressionElementType {
 
     /**
      * Gets the value of the rtexpressions property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the rtexpressions property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getRTEXPRESSIONS().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link RTExpressionElementType }
-     * 
-     * 
      */
     public List<RTExpressionElementType> getRTEXPRESSIONS() {
         if (rtexpressions == null) {

@@ -5,22 +5,15 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for RulesetElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="RulesetElementType">
  *   &lt;complexContent>
@@ -36,8 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XStreamAlias("RULESET")
 public class RulesetElementType {
@@ -55,11 +46,9 @@ public class RulesetElementType {
 
     /**
      * Gets the value of the rulesetid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getRULESETID() {
         return rulesetid;
@@ -67,11 +56,9 @@ public class RulesetElementType {
 
     /**
      * Sets the value of the rulesetid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setRULESETID(Long value) {
         this.rulesetid = value;
@@ -79,11 +66,9 @@ public class RulesetElementType {
 
     /**
      * Gets the value of the listid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getLISTID() {
         return listid;
@@ -91,11 +76,9 @@ public class RulesetElementType {
 
     /**
      * Sets the value of the listid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setLISTID(Long value) {
         this.listid = value;
@@ -103,11 +86,9 @@ public class RulesetElementType {
 
     /**
      * Gets the value of the rulesetname property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRULESETNAME() {
         return rulesetname;
@@ -115,11 +96,9 @@ public class RulesetElementType {
 
     /**
      * Sets the value of the rulesetname property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRULESETNAME(String value) {
         this.rulesetname = value;
@@ -127,11 +106,9 @@ public class RulesetElementType {
 
     /**
      * Gets the value of the contentareas property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ContentAreasElementType }
-     *     
+     *
+     * @return possible object is
+     * {@link ContentAreasElementType }
      */
     public ContentAreasElementType getCONTENTAREAS() {
         return contentareas;
@@ -139,11 +116,9 @@ public class RulesetElementType {
 
     /**
      * Sets the value of the contentareas property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ContentAreasElementType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ContentAreasElementType }
      */
     public void setCONTENTAREAS(ContentAreasElementType value) {
         this.contentareas = value;
@@ -151,11 +126,9 @@ public class RulesetElementType {
 
     /**
      * Gets the value of the rules property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RulesElementType }
-     *     
+     *
+     * @return possible object is
+     * {@link RulesElementType }
      */
     public RulesElementType getRULES() {
         return rules;
@@ -163,11 +136,9 @@ public class RulesetElementType {
 
     /**
      * Sets the value of the rules property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RulesElementType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link RulesElementType }
      */
     public void setRULES(RulesElementType value) {
         this.rules = value;

@@ -9,22 +9,22 @@ import com.thoughtworks.xstream.annotations.XStreamImplicit;
 @XStreamAlias("EXPORT_COLUMNS")
 public class ExportColumns {
 
-	@XStreamImplicit(itemFieldName="COLUMN")
-	private List<String> columns;
-	
-	public ExportColumns() {
-		this.columns = new ArrayList<String>();
-	}
+    @XStreamImplicit(itemFieldName = "COLUMN")
+    private List<String> columns;
 
-	public List<String> getColumns() {
-		return columns;
-	}
+    public ExportColumns() {
+        this.columns = new ArrayList<String>();
+    }
 
-	public void setColumn(List<String> columns) {
-		this.columns = columns;
-	}
-	
-	public void addColumn(String column) {
-		this.columns.add(column);
-	}
+    public List<String> getColumns() {
+        return columns;
+    }
+
+    public void setColumn(List<String> columns) {
+        this.columns = columns;
+    }
+
+    public void addColumn(String column) {
+        this.columns.add(column);
+    }
 }
