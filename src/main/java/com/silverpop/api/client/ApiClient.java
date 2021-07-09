@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethodBase;
+import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -17,8 +18,9 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
     private Log log = LogFactory.getLog(this.getClass());
 
 	private ApiCommandProcessor<REQUEST> commandProcessor;
-	protected HttpClient httpClient;
     protected ApiSession session;
+
+    private final HttpClient httpClient;
 
 
     public ApiSession getSession() {
@@ -27,9 +29,15 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 
 
 	protected ApiClient(ApiCommandProcessor<REQUEST> commandProcessor, ApiSession session) {
-		this(commandProcessor, new HttpClient(), session);
+		this(commandProcessor, new HttpClient(new MultiThreadedHttpConnectionManager()), session);
 	}
 
+    /**
+     * Constructor.
+     * @param commandProcessor can not be {@code null}.
+     * @param httpClient this should be configured with a {@code MultiThreadedHttpConnectionManager}, otherwise the ApiClient constructed will not be thread-safe.
+     * @param session can not be {@code null}.
+     */
 	protected ApiClient(ApiCommandProcessor<REQUEST> commandProcessor, HttpClient httpClient, ApiSession session) {
 		this.commandProcessor = commandProcessor;
 		this.httpClient = httpClient;
@@ -86,7 +94,7 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 		}
 	}
 
-	protected String executeMethod(HttpMethodBase method) throws ApiResultException {
+	private String executeMethod(HttpMethodBase method) throws ApiResultException {
 		try {
             log.info("executing method:" + method);
 			int responseCode = httpClient.executeMethod(method);
@@ -108,8 +116,10 @@ public abstract class ApiClient<REQUEST extends ApiRequest> {
 			}
 		} catch(IOException e) {
 			throw new ApiException("Error executing API: ", e);
-		}
-	}
+		} finally {
+            method.releaseConnection();
+        }
+    }
 
 	private ApiResult extractResult(String requestName, ApiResponse response) throws ApiResultException {
 		if(response.isSuccessful()) {
