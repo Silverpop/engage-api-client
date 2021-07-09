@@ -5,24 +5,20 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for ContentAreaElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="ContentAreaElementType">
  *   &lt;complexContent>
@@ -36,12 +32,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ContentAreaElementType", propOrder = {
-    "defaultcontent"
+        "defaultcontent"
 })
 public class ContentAreaElementType {
 
@@ -54,11 +48,9 @@ public class ContentAreaElementType {
 
     /**
      * Gets the value of the defaultcontent property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public DefaultContentElementType getDEFAULTCONTENT() {
         return defaultcontent;
@@ -66,11 +58,9 @@ public class ContentAreaElementType {
 
     /**
      * Sets the value of the defaultcontent property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDEFAULTCONTENT(DefaultContentElementType value) {
         this.defaultcontent = value;
@@ -78,11 +68,9 @@ public class ContentAreaElementType {
 
     /**
      * Gets the value of the type property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getType() {
         return type;
@@ -90,11 +78,9 @@ public class ContentAreaElementType {
 
     /**
      * Sets the value of the type property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setType(String value) {
         this.type = value;
@@ -102,11 +88,9 @@ public class ContentAreaElementType {
 
     /**
      * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -114,11 +98,9 @@ public class ContentAreaElementType {
 
     /**
      * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;

@@ -1,13 +1,6 @@
-
-
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 
 @XStreamAlias("MAILING")
 public class MultiMailingsElementType {
@@ -19,11 +12,9 @@ public class MultiMailingsElementType {
 
     /**
      * Gets the value of the mailingid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getMAILINGID() {
         return mailingid;
@@ -31,11 +22,9 @@ public class MultiMailingsElementType {
 
     /**
      * Sets the value of the mailingid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setMAILINGID(Long value) {
         this.mailingid = value;
@@ -43,11 +32,9 @@ public class MultiMailingsElementType {
 
     /**
      * Gets the value of the reportid property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getREPORTID() {
         return reportid;
@@ -55,11 +42,9 @@ public class MultiMailingsElementType {
 
     /**
      * Sets the value of the reportid property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setREPORTID(Long value) {
         this.reportid = value;

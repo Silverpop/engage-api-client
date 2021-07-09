@@ -5,17 +5,15 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-
 /**
  * <p>Java class for TableColumnElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="TableColumnElementType">
  *   &lt;complexContent>
@@ -32,8 +30,6 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XStreamAlias("COLUMN")
 public class TableColumnElementType {
@@ -55,11 +51,9 @@ public class TableColumnElementType {
 
     /**
      * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getNAME() {
         return name;
@@ -67,11 +61,9 @@ public class TableColumnElementType {
 
     /**
      * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setNAME(String value) {
         this.name = value;
@@ -79,11 +71,9 @@ public class TableColumnElementType {
 
     /**
      * Gets the value of the type property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTYPE() {
         return type;
@@ -91,11 +81,9 @@ public class TableColumnElementType {
 
     /**
      * Sets the value of the type property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTYPE(String value) {
         this.type = value;
@@ -103,11 +91,9 @@ public class TableColumnElementType {
 
     /**
      * Gets the value of the isrequired property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isISREQUIRED() {
         return isrequired;
@@ -115,11 +101,9 @@ public class TableColumnElementType {
 
     /**
      * Sets the value of the isrequired property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setISREQUIRED(Boolean value) {
         this.isrequired = value;
@@ -127,11 +111,9 @@ public class TableColumnElementType {
 
     /**
      * Gets the value of the keycolumn property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isKEYCOLUMN() {
         return keycolumn;
@@ -139,11 +121,9 @@ public class TableColumnElementType {
 
     /**
      * Sets the value of the keycolumn property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setKEYCOLUMN(Boolean value) {
         this.keycolumn = value;
@@ -151,11 +131,9 @@ public class TableColumnElementType {
 
     /**
      * Gets the value of the defaultvalue property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDEFAULTVALUE() {
         return defaultvalue;
@@ -163,11 +141,9 @@ public class TableColumnElementType {
 
     /**
      * Sets the value of the defaultvalue property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDEFAULTVALUE(String value) {
         this.defaultvalue = value;
@@ -175,11 +151,9 @@ public class TableColumnElementType {
 
     /**
      * Gets the value of the selectionvalues property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link SelectionValuesElementType }
-     *     
+     *
+     * @return possible object is
+     * {@link SelectionValuesElementType }
      */
     public SelectionValuesElementType getSELECTIONVALUES() {
         return selectionvalues;
@@ -187,11 +161,9 @@ public class TableColumnElementType {
 
     /**
      * Sets the value of the selectionvalues property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SelectionValuesElementType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link SelectionValuesElementType }
      */
     public void setSELECTIONVALUES(SelectionValuesElementType value) {
         this.selectionvalues = value;

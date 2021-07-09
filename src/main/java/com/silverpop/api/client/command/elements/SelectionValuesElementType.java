@@ -5,19 +5,13 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT
 //
 
-
 package com.silverpop.api.client.command.elements;
-
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 /**
  * <p>Java class for SelectionValuesElementType complex type.
@@ -35,8 +29,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
  */
 @XStreamAlias("SELECTION_VALUES")
 public class SelectionValuesElementType {
@@ -63,8 +55,6 @@ public class SelectionValuesElementType {
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     *
-     *
      */
     public List<String> getVALUES() {
         if (values == null) {

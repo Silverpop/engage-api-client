@@ -5,22 +5,15 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for RuleElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="RuleElementType">
  *   &lt;complexContent>
@@ -35,8 +28,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XStreamAlias("RULE")
 public class RuleElementType {
@@ -50,19 +41,16 @@ public class RuleElementType {
     @XStreamAlias("CONTENTS")
     protected ContentsElementType contents;
 
-    public RuleElementType()
-    {
+    public RuleElementType() {
         this.criteria = new CriteriaElementType();
         this.contents = new ContentsElementType();
     }
 
     /**
      * Gets the value of the rulename property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRULENAME() {
         return rulename;
@@ -70,11 +58,9 @@ public class RuleElementType {
 
     /**
      * Sets the value of the rulename property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRULENAME(String value) {
         this.rulename = value;
@@ -82,7 +68,6 @@ public class RuleElementType {
 
     /**
      * Gets the value of the priority property.
-     * 
      */
     public int getPRIORITY() {
         return priority;
@@ -90,7 +75,6 @@ public class RuleElementType {
 
     /**
      * Sets the value of the priority property.
-     * 
      */
     public void setPRIORITY(int value) {
         this.priority = value;
@@ -98,11 +82,9 @@ public class RuleElementType {
 
     /**
      * Gets the value of the criteria property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CriteriaElementType }
-     *     
+     *
+     * @return possible object is
+     * {@link CriteriaElementType }
      */
     public CriteriaElementType getCRITERIA() {
         return criteria;
@@ -110,11 +92,9 @@ public class RuleElementType {
 
     /**
      * Sets the value of the criteria property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CriteriaElementType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link CriteriaElementType }
      */
     public void setCRITERIA(CriteriaElementType value) {
         this.criteria = value;
@@ -122,11 +102,9 @@ public class RuleElementType {
 
     /**
      * Gets the value of the contents property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public ContentsElementType getCONTENTS() {
         return contents;
@@ -134,11 +112,9 @@ public class RuleElementType {
 
     /**
      * Sets the value of the contents property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCONTENTS(ContentsElementType value) {
         this.contents = value;

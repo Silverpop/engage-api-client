@@ -5,18 +5,13 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for MetricsExportFormat.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
@@ -28,7 +23,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
- * 
  */
 @XStreamAlias("EXPORT_FORMAT")
 public enum MetricsExportFormat {

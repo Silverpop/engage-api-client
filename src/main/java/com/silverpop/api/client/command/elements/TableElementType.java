@@ -5,22 +5,15 @@
 // Generated on: 2015.08.25 at 11:03:15 AM EDT 
 //
 
-
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-
 /**
  * <p>Java class for TableElementType complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="TableElementType">
  *   &lt;complexContent>
@@ -33,8 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XStreamAlias("TABLE")
 public class TableElementType {
@@ -46,11 +37,9 @@ public class TableElementType {
 
     /**
      * Gets the value of the tablename property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTABLENAME() {
         return tablename;
@@ -58,11 +47,9 @@ public class TableElementType {
 
     /**
      * Sets the value of the tablename property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTABLENAME(String value) {
         this.tablename = value;
@@ -70,11 +57,9 @@ public class TableElementType {
 
     /**
      * Gets the value of the tablecolumns property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TableColumnsElementType }
-     *     
+     *
+     * @return possible object is
+     * {@link TableColumnsElementType }
      */
     public TableColumnsElementType getTABLECOLUMNS() {
         return tablecolumns;
@@ -82,11 +67,9 @@ public class TableElementType {
 
     /**
      * Sets the value of the tablecolumns property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TableColumnsElementType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link TableColumnsElementType }
      */
     public void setTABLECOLUMNS(TableColumnsElementType value) {
         this.tablecolumns = value;

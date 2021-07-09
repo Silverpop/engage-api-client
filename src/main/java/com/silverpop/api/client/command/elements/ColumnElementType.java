@@ -1,11 +1,9 @@
 package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-
-import java.util.List;
 
 /**
+ *
  */
 @XStreamAlias("COLUMN")
 public class ColumnElementType {
@@ -25,8 +23,7 @@ public class ColumnElementType {
     @XStreamAlias("SELECTION_VALUES")
     protected SelectionValuesElementType SelectionValues;
 
-    public ColumnElementType()
-    {
+    public ColumnElementType() {
         this.SelectionValues = new SelectionValuesElementType();
     }
 
