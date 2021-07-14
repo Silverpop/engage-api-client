@@ -9,6 +9,8 @@ package com.silverpop.api.client.command.elements;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
+import com.thoughtworks.xstream.converters.extended.ToAttributedValueConverter;
 
 /**
  * <p>Java class for ContentElementType complex type.
@@ -27,6 +29,7 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
  * </pre>
  */
 @XStreamAlias("CONTENT")
+@XStreamConverter(value = ToAttributedValueConverter.class, strings = {"value"})
 public class ContentElementType {
 
     protected String value;
